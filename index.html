@@ -1,0 +1,2493 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+<!--  <link rel="preconnect" href="https://fonts.gstatic.com">-->
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<!--  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+  <link href="./css/taskstyle.css" rel="stylesheet">
+  <link href="./css/timeline.css" rel="stylesheet">
+  <link href="./css/tailwind.min.css" rel="stylesheet">
+  <link href="./css/crm-group-task-parcel.css" rel="stylesheet">
+  <link href="./css/parcels.css" rel="stylesheet">
+  <link href="./css/app.css" rel="stylesheet">
+  <link href="./css/custom.css" rel="stylesheet">
+  <link href="./css/taskPopup.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+
+<body>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" onclick="openNewPopup()">
+    Launch demo modal
+  </button>
+
+  <div class="modal fade" tabindex="-1" id="newPopup" role="dialog">
+    <div class="modal-dialog mw-1420 mw-1712" role="document">
+      <div class="modal-close">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.4893 0L7.5 5.98929L1.51071 0L0 1.51071L5.98929 7.5L0 13.4893L1.51071 15L7.5 9.01071L13.4893 15L15 13.4893L9.01071 7.5L15 1.51071L13.4893 0Z"
+            fill="white" />
+        </svg>
+      </div>
+      <div class="modal-content">
+        <div class="taskPopup-content">
+          <div class="taskPopup-left">
+            <div class="taskPopup-left-block package-number">
+              <div class="taskPopup-left-item">
+                <div class="taskPopup-left-title">
+                  Номер посылки Меест
+                </div>
+                <div class="taskPopup-left-name"> CV858286079CZ
+                  <a href="javascript:void(0)">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                              d="M12 0.75H3C2.175 0.75 1.5 1.425 1.5 2.25V12.75H3V2.25H12V0.75ZM14.25 3.75H6C5.175 3.75 4.5 4.425 4.5 5.25V15.75C4.5 16.575 5.175 17.25 6 17.25H14.25C15.075 17.25 15.75 16.575 15.75 15.75V5.25C15.75 4.425 15.075 3.75 14.25 3.75ZM14.25 15.75H6V5.25H14.25V15.75Z"
+                              fill="#5081E9" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="taskPopup-left-item">
+                <div class="taskPopup-left-title">
+                  Номер посылки НП
+
+                </div>
+                <div class="taskPopup-left-name taskPopup-left-name-medium"> 20 4002 3132 0297
+                  <a href="javascript:void(0)">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                              d="M12 0.75H3C2.175 0.75 1.5 1.425 1.5 2.25V12.75H3V2.25H12V0.75ZM14.25 3.75H6C5.175 3.75 4.5 4.425 4.5 5.25V15.75C4.5 16.575 5.175 17.25 6 17.25H14.25C15.075 17.25 15.75 16.575 15.75 15.75V5.25C15.75 4.425 15.075 3.75 14.25 3.75ZM14.25 15.75H6V5.25H14.25V15.75Z"
+                              fill="#5081E9" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-block-wrap">
+              <div class="accordion-block">
+                <div class="taskPopup-recipient-data according-item" onclick="accordingInfo(this)">
+                  <div class=" accordion-title">
+                    <div class="accordion-title-ico active _active">
+                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M0.442383 1.5575L3.87738 5L0.442383 8.4425L1.49988 9.5L5.99988 5L1.49988 0.5L0.442383 1.5575Z"
+                                fill="#8C8C8C" />
+                      </svg>
+                    </div>
+
+                    Дание получателя
+                  </div>
+                  <div class="taskPopup-left-item accordion-content active">
+                    <div class="taskPopup-left-recipient-name">
+                      Кульчицька Світлана Василівна
+                    </div>
+                    <div class="taskPopup-left-value">
+                      380979856356
+                    </div>
+                    <div class="taskPopup-left-value">
+                      Svitlana.test@gmail.com
+                    </div>
+                    <div class="taskPopup-left-value">
+                      # Заказа 253651254142
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="taskPopup-package-info according-item" onclick="accordingInfo(this)">
+                  <div class="accordion-title">
+                    <div class="accordion-title-ico">
+                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M0.442383 1.5575L3.87738 5L0.442383 8.4425L1.49988 9.5L5.99988 5L1.49988 0.5L0.442383 1.5575Z"
+                                fill="#8C8C8C" />
+                      </svg>
+                    </div>
+
+
+                    информация о посылке
+                  </div>
+
+                  <div class="taskPopup-left-block accordion-content">
+                    <table class="taskPopup-left-table">
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Перевозчик:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          Meest
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Тип доставки:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          Nova Poshta
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Манифест:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          EXP1888101942/NOTINO
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Тип оплаты:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          Наложений платеж
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Сумма COD:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          2050 грн
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Стоимост посылки:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          80 EUR
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Вес посылки:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          0.5 кг
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="taskPopup-address-info according-item" onclick="accordingInfo(this)">
+                  <div class="accordion-title">
+                    <div class="accordion-title-ico">
+                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M0.442383 1.5575L3.87738 5L0.442383 8.4425L1.49988 9.5L5.99988 5L1.49988 0.5L0.442383 1.5575Z"
+                                fill="#8C8C8C" />
+                      </svg>
+                    </div>
+
+                    <div class="taskPopup-left-title-500">
+                      Адрес доставки
+                    </div>
+                  </div>
+
+                  <div class="taskPopup-left-block accordion-content">
+                    <table class="taskPopup-left-table">
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          Город доставки:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          Северодонецк
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          № отделения:
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          #10, ул. Химиков, 44Г
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="taskPopup-address-info according-item" onclick="accordingInfo(this)">
+                  <div class="accordion-title">
+                    <div class="accordion-title-ico">
+                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M0.442383 1.5575L3.87738 5L0.442383 8.4425L1.49988 9.5L5.99988 5L1.49988 0.5L0.442383 1.5575Z"
+                                fill="#8C8C8C" />
+                      </svg>
+                    </div>
+
+                    <div class="taskPopup-left-title-500">
+                      переадресация
+                    </div>
+                  </div>
+
+                  <div class="taskPopup-left-block accordion-content">
+                    <table class="taskPopup-left-table">
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          test
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          test
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          test
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          test
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="taskPopup-address-info according-item" onclick="accordingInfo(this)">
+                  <div class="accordion-title">
+                    <div class="accordion-title-ico">
+                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M0.442383 1.5575L3.87738 5L0.442383 8.4425L1.49988 9.5L5.99988 5L1.49988 0.5L0.442383 1.5575Z"
+                                fill="#8C8C8C" />
+                      </svg>
+                    </div>
+
+                    <div class="taskPopup-left-title-500">
+                      повторная доставка
+                    </div>
+                  </div>
+
+                  <div class="taskPopup-left-block accordion-content">
+                    <table class="taskPopup-left-table">
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          test
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          test
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="taskPopup-left-td-name">
+                          test
+                        </td>
+                        <td class="taskPopup-left-td-val">
+                          test
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="taskPopup-center">
+          <div class="taskPopup-center-inner active" data-center="table">
+            <div class="taskPopup-top-btns">
+              <a href="javascript:void(0)" onclick="changeTypeTask('history', this)"
+                class="taskPopup-top-btn taskPopup-top-btn-black active">
+                Хронология
+              </a>
+              <a href="javascript:void(0)" onclick="changeTypeTask('track', this)"
+                class="taskPopup-top-btn taskPopup-top-btn-orange">
+                Трекинг
+              </a>
+              <a href="javascript:void(0)" onclick="changeTypeTask('notif', this)"
+                class="taskPopup-top-btn taskPopup-top-btn-red">
+                Уведомления
+              </a>
+              <a href="javascript:void(0)" onclick="changeTypeTask('task', this)"
+                class="taskPopup-top-btn taskPopup-top-btn-green">
+                Задачи
+              </a>
+              <a href="javascript:void(0)" onclick="changeTypeTask('recip', this)"
+                class="taskPopup-top-btn taskPopup-top-btn-blue">
+                Получатель
+              </a>
+            </div>
+            <div class="taskPopup-center-content">
+              <table class="taskPopup-center-table">
+
+                <tr data-type="track">
+                  <td>
+                    <span>
+                      26/10/2020, 13:39
+                    </span>
+                  </td>
+                  <td class="taskPopup-center-table-td-ico orange-ico">
+                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.88 13.93C5.67 13.93 5.53 13.86 5.39 13.79C3.92 12.81 2.59 11.62 1.54 10.22C0.560001 8.96 0 7.42 0 5.81C0 4.27 0.63 2.80001 1.75 1.68001C2.87 0.560006 4.41 0 5.95 0C9.17 0 11.83 2.59 11.9 5.81C11.9 7.42 11.34 8.96 10.36 10.22C9.31 11.62 7.98 12.88 6.51 13.79C6.23 13.86 6.09 13.93 5.88 13.93ZM5.88 3.99C4.83 3.99 3.92 4.9 3.92 5.95C3.92 6.44 4.13 6.93 4.48 7.35C5.25 8.12 6.51 8.12001 7.28 7.28001C7.63 6.93001 7.84 6.44 7.84 5.95C7.84 4.83 6.93 3.99 5.88 3.99Z"
+                        fill="#FD7D23" />
+                    </svg>
+                  </td>
+                  <td>
+                    <div class="taskPopup-center-table-txt has-content" onclick="openTableDesc(this)">
+                      Посылка прибыла в отделение Новой почты
+                    </div>
+                    <div class="taskPopup-center-table-desc">
+                      <div class="taskPopup-center-table-desc-container">
+                        <div class="taskPopup-center-table-desc-ico">
+                          <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M15.9004 19.004H6.0004C3.2004 19.004 0.900391 16.704 0.900391 13.904V6.00399C0.900391 3.20399 3.2004 1.00399 6.0004 0.903992H15.9004C17.2004 0.903992 18.5004 1.40399 19.5004 2.40399C20.5004 3.30399 21.0004 4.60399 21.0004 6.00399V13.904C21.0004 16.704 18.7004 19.004 15.9004 19.004ZM5.0004 6.20399C4.8004 6.20399 4.6004 6.30399 4.5004 6.40399C4.2004 6.70399 4.20039 7.10399 4.40039 7.40399L4.5004 7.50399L9.1004 11.104C9.7004 11.504 10.3004 11.804 11.0004 11.804C11.7004 11.804 12.4004 11.604 13.0004 11.104L17.5004 7.50399L17.6004 7.40399C17.8004 7.10399 17.8004 6.70399 17.6004 6.40399C17.5004 6.30399 17.3004 6.20399 17.1004 6.10399C16.9004 6.10399 16.7004 6.20399 16.6004 6.30399L12.1004 9.90399C11.8004 10.104 11.5004 10.304 11.1004 10.304C10.7004 10.304 10.4004 10.204 10.1004 9.90399L5.6004 6.30399C5.4004 6.30399 5.2004 6.20399 5.0004 6.20399Z"
+                              fill="#5081E9"></path>
+                          </svg>
+                        </div>
+                        <div class="taskPopup-center-table-desc-text">
+                          Viber доставлено 19/04/2021 19:30
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-type="notif">
+                  <td>
+                    <span>
+                      26/10/2020 13:39
+                    </span>
+                  </td>
+                  <td class="taskPopup-center-table-td-ico red-ico">
+                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.41533 16C5.93533 15.92 5.45532 15.76 5.05532 15.44C4.73532 15.2 4.49533 14.88 4.49533 14.48C4.49533 14.08 4.89533 13.92 5.21533 13.84C6.25533 13.76 7.37533 13.76 8.41533 13.84C8.73533 13.92 9.13532 14.08 9.13532 14.48C9.13532 14.88 8.89534 15.2 8.57534 15.44C8.17534 15.76 7.69533 15.92 7.21533 16C7.05533 16 6.97533 16 6.81533 16C6.65533 16 6.57533 16 6.41533 16ZM3.05532 12.56C2.17532 12.48 1.37532 12.08 0.735323 11.44C0.255323 10.88 0.0153277 10.24 0.0153277 9.52C-0.0646723 8.88 0.175337 8.16 0.575337 7.68C1.13534 7.04 1.45532 6.24 1.45532 5.44V5.12C1.37532 4 1.77533 2.88 2.49533 2C3.53533 0.72 5.13533 0 6.81533 0H6.89533C8.57533 0 10.1753 0.799999 11.2953 2.08C11.9353 2.96 12.3353 4 12.2553 5.04V5.36C12.2553 6.24 12.4953 7.04 13.1353 7.6C13.5353 8.16 13.7753 8.8 13.6953 9.44C13.6953 10.16 13.4553 10.8 12.9753 11.36C12.3353 12 11.5353 12.4 10.6553 12.48C9.37532 12.56 8.17533 12.64 6.89533 12.64C5.53533 12.8 4.25532 12.72 3.05532 12.56Z"
+                        fill="#FF0000" />
+                    </svg>
+                  </td>
+                  <td>
+                    <div class="taskPopup-center-table-txt has-content" onclick="openTableDesc(this)">
+                      Отправлено сообщение, шаблон Альфа
+                    </div>
+                    <div class="taskPopup-center-table-desc">
+                      Доброго дня, Паламарчук Татьяна Владимировна ! Ми намагались Вам
+                      доставити
+                      посилку № CV876863855CZ з Вашим замовленням №1028989997, але на жаль, Ви
+                      її
+                      не отримали. На даному етапі посилка готується до повернення в Чехію.
+                      Але Ви
+                      маєте можливість оформіть її повторну доставку без додаткових оплат.
+                      Якщо
+                      для Вас посилка вже не актуальна, Ви зможете обрати причину відмови від
+                      замовлення. Будемо вдячні за Вашу відповідь, оскільки вона допоможе нам
+                      покращити наш сервіс. Дякуємо. З повагою до Вас, Notino
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-type="task">
+                  <td>
+                    <span>
+                      26/10/2020 13:39
+                    </span>
+                  </td>
+                  <td class="taskPopup-center-table-td-ico green-ico">
+                    <svg width="12" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.297 8.5625C9.23185 8.5625 7.55176 10.2307 7.55176 12.2812C7.55176 14.3318 9.23185 16 11.297 16C13.3795 16 15.0737 14.3318 15.0737 12.2812C15.0737 10.2307 13.3795 8.5625 11.297 8.5625ZM12.4465 11.8313L11.1876 13.3313C11.0973 13.4389 10.9641 13.5 10.8249 13.5C10.8068 13.5 10.7887 13.499 10.7705 13.4969C10.6122 13.4786 10.4739 13.3824 10.4026 13.2409L9.89907 12.2409C9.78247 12.0093 9.87701 11.7278 10.1102 11.612C10.3434 11.4962 10.627 11.5901 10.7436 11.8216L10.9243 12.1806L11.7211 11.2312C11.888 11.0323 12.1857 11.0055 12.386 11.1711C12.5863 11.3369 12.6134 11.6324 12.4465 11.8313Z"
+                        fill="#69C327" />
+                      <path
+                        d="M11.0952 2.67041L9.17968 0.703562C9.17877 0.702625 9.17782 0.701656 9.17691 0.700719C8.73588 0.255406 8.1222 0 7.49329 0H1.41626C0.635335 0 0 0.630844 0 1.40625V13.5625C0 14.3379 0.635335 14.9687 1.41626 14.9687H7.47126C6.92858 14.209 6.60922 13.2815 6.60922 12.2812C6.60922 9.71378 8.71288 7.625 11.2986 7.625C11.4579 7.625 11.6154 7.63294 11.7707 7.64822V4.31187C11.7707 3.69409 11.5308 3.11125 11.0952 2.67041ZM5.00413 10.4687H2.48633C2.22561 10.4687 2.01424 10.2589 2.01424 10C2.01424 9.74112 2.22561 9.53125 2.48633 9.53125H5.00413C5.26485 9.53125 5.47621 9.74112 5.47621 10C5.47621 10.2589 5.26485 10.4687 5.00413 10.4687ZM5.00413 7.96875H2.48633C2.22561 7.96875 2.01424 7.75887 2.01424 7.5C2.01424 7.24112 2.22561 7.03125 2.48633 7.03125H5.00413C5.26485 7.03125 5.47621 7.24112 5.47621 7.5C5.47621 7.75887 5.26485 7.96875 5.00413 7.96875ZM5.00413 5.46875H2.48633C2.22561 5.46875 2.01424 5.25887 2.01424 5C2.01424 4.74112 2.22561 4.53125 2.48633 4.53125H5.00413C5.26485 4.53125 5.47621 4.74112 5.47621 5C5.47621 5.25887 5.26485 5.46875 5.00413 5.46875ZM8.02549 7.96875H7.52193C7.26121 7.96875 7.04984 7.75887 7.04984 7.5C7.04984 7.24112 7.26121 7.03125 7.52193 7.03125H8.02549C8.28621 7.03125 8.49757 7.24112 8.49757 7.5C8.49757 7.75887 8.28621 7.96875 8.02549 7.96875ZM8.02549 5.46875H7.52193C7.26121 5.46875 7.04984 5.25887 7.04984 5C7.04984 4.74112 7.26121 4.53125 7.52193 4.53125H8.02549C8.28621 4.53125 8.49757 4.74112 8.49757 5C8.49757 5.25887 8.28621 5.46875 8.02549 5.46875Z"
+                        fill="#69C327" />
+                    </svg>
+                  </td>
+                  <td>
+                    <div class="taskPopup-center-table-txt">
+                      Возвращённая посылка прибыла в международный терминал
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-type="task">
+                  <td>
+                    <span>
+                      26/10/2020 13:39
+                    </span>
+                  </td>
+                  <td class="taskPopup-center-table-td-ico green-ico">
+                    <svg width="12" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.297 8.5625C9.23185 8.5625 7.55176 10.2307 7.55176 12.2812C7.55176 14.3318 9.23185 16 11.297 16C13.3795 16 15.0737 14.3318 15.0737 12.2812C15.0737 10.2307 13.3795 8.5625 11.297 8.5625ZM12.4465 11.8313L11.1876 13.3313C11.0973 13.4389 10.9641 13.5 10.8249 13.5C10.8068 13.5 10.7887 13.499 10.7705 13.4969C10.6122 13.4786 10.4739 13.3824 10.4026 13.2409L9.89907 12.2409C9.78247 12.0093 9.87701 11.7278 10.1102 11.612C10.3434 11.4962 10.627 11.5901 10.7436 11.8216L10.9243 12.1806L11.7211 11.2312C11.888 11.0323 12.1857 11.0055 12.386 11.1711C12.5863 11.3369 12.6134 11.6324 12.4465 11.8313Z"
+                        fill="#69C327" />
+                      <path
+                        d="M11.0952 2.67041L9.17968 0.703562C9.17877 0.702625 9.17782 0.701656 9.17691 0.700719C8.73588 0.255406 8.1222 0 7.49329 0H1.41626C0.635335 0 0 0.630844 0 1.40625V13.5625C0 14.3379 0.635335 14.9687 1.41626 14.9687H7.47126C6.92858 14.209 6.60922 13.2815 6.60922 12.2812C6.60922 9.71378 8.71288 7.625 11.2986 7.625C11.4579 7.625 11.6154 7.63294 11.7707 7.64822V4.31187C11.7707 3.69409 11.5308 3.11125 11.0952 2.67041ZM5.00413 10.4687H2.48633C2.22561 10.4687 2.01424 10.2589 2.01424 10C2.01424 9.74112 2.22561 9.53125 2.48633 9.53125H5.00413C5.26485 9.53125 5.47621 9.74112 5.47621 10C5.47621 10.2589 5.26485 10.4687 5.00413 10.4687ZM5.00413 7.96875H2.48633C2.22561 7.96875 2.01424 7.75887 2.01424 7.5C2.01424 7.24112 2.22561 7.03125 2.48633 7.03125H5.00413C5.26485 7.03125 5.47621 7.24112 5.47621 7.5C5.47621 7.75887 5.26485 7.96875 5.00413 7.96875ZM5.00413 5.46875H2.48633C2.22561 5.46875 2.01424 5.25887 2.01424 5C2.01424 4.74112 2.22561 4.53125 2.48633 4.53125H5.00413C5.26485 4.53125 5.47621 4.74112 5.47621 5C5.47621 5.25887 5.26485 5.46875 5.00413 5.46875ZM8.02549 7.96875H7.52193C7.26121 7.96875 7.04984 7.75887 7.04984 7.5C7.04984 7.24112 7.26121 7.03125 7.52193 7.03125H8.02549C8.28621 7.03125 8.49757 7.24112 8.49757 7.5C8.49757 7.75887 8.28621 7.96875 8.02549 7.96875ZM8.02549 5.46875H7.52193C7.26121 5.46875 7.04984 5.25887 7.04984 5C7.04984 4.74112 7.26121 4.53125 7.52193 4.53125H8.02549C8.28621 4.53125 8.49757 4.74112 8.49757 5C8.49757 5.25887 8.28621 5.46875 8.02549 5.46875Z"
+                        fill="#69C327" />
+                    </svg>
+                  </td>
+                  <td>
+                    <div class="taskPopup-center-table-txt">
+                      Возвращённая посылка прибыла в международный терминал
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-type="recip">
+                  <td>
+                    <span>
+                      26/10/2020 13:39
+                    </span>
+                  </td>
+                  <td class="taskPopup-center-table-td-ico blue-ico">
+                    <svg width="12" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.297 8.5625C9.23185 8.5625 7.55176 10.2307 7.55176 12.2812C7.55176 14.3318 9.23185 16 11.297 16C13.3795 16 15.0737 14.3318 15.0737 12.2812C15.0737 10.2307 13.3795 8.5625 11.297 8.5625ZM12.4465 11.8313L11.1876 13.3313C11.0973 13.4389 10.9641 13.5 10.8249 13.5C10.8068 13.5 10.7887 13.499 10.7705 13.4969C10.6122 13.4786 10.4739 13.3824 10.4026 13.2409L9.89907 12.2409C9.78247 12.0093 9.87701 11.7278 10.1102 11.612C10.3434 11.4962 10.627 11.5901 10.7436 11.8216L10.9243 12.1806L11.7211 11.2312C11.888 11.0323 12.1857 11.0055 12.386 11.1711C12.5863 11.3369 12.6134 11.6324 12.4465 11.8313Z"
+                        fill="#005FB1" />
+                      <path
+                        d="M11.0952 2.67041L9.17968 0.703562C9.17877 0.702625 9.17782 0.701656 9.17691 0.700719C8.73588 0.255406 8.1222 0 7.49329 0H1.41626C0.635335 0 0 0.630844 0 1.40625V13.5625C0 14.3379 0.635335 14.9687 1.41626 14.9687H7.47126C6.92858 14.209 6.60922 13.2815 6.60922 12.2812C6.60922 9.71378 8.71288 7.625 11.2986 7.625C11.4579 7.625 11.6154 7.63294 11.7707 7.64822V4.31187C11.7707 3.69409 11.5308 3.11125 11.0952 2.67041ZM5.00413 10.4687H2.48633C2.22561 10.4687 2.01424 10.2589 2.01424 10C2.01424 9.74112 2.22561 9.53125 2.48633 9.53125H5.00413C5.26485 9.53125 5.47621 9.74112 5.47621 10C5.47621 10.2589 5.26485 10.4687 5.00413 10.4687ZM5.00413 7.96875H2.48633C2.22561 7.96875 2.01424 7.75887 2.01424 7.5C2.01424 7.24112 2.22561 7.03125 2.48633 7.03125H5.00413C5.26485 7.03125 5.47621 7.24112 5.47621 7.5C5.47621 7.75887 5.26485 7.96875 5.00413 7.96875ZM5.00413 5.46875H2.48633C2.22561 5.46875 2.01424 5.25887 2.01424 5C2.01424 4.74112 2.22561 4.53125 2.48633 4.53125H5.00413C5.26485 4.53125 5.47621 4.74112 5.47621 5C5.47621 5.25887 5.26485 5.46875 5.00413 5.46875ZM8.02549 7.96875H7.52193C7.26121 7.96875 7.04984 7.75887 7.04984 7.5C7.04984 7.24112 7.26121 7.03125 7.52193 7.03125H8.02549C8.28621 7.03125 8.49757 7.24112 8.49757 7.5C8.49757 7.75887 8.28621 7.96875 8.02549 7.96875ZM8.02549 5.46875H7.52193C7.26121 5.46875 7.04984 5.25887 7.04984 5C7.04984 4.74112 7.26121 4.53125 7.52193 4.53125H8.02549C8.28621 4.53125 8.49757 4.74112 8.49757 5C8.49757 5.25887 8.28621 5.46875 8.02549 5.46875Z"
+                        fill="#005FB1" />
+                    </svg>
+                  </td>
+                  <td>
+                    <div class="taskPopup-center-table-txt">
+                      Возвращённая посылка прибыла в международный терминал
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-type="recip">
+                  <td>
+                    <span>
+                      26/10/2020 13:39
+                    </span>
+                  </td>
+                  <td class="taskPopup-center-table-td-ico blue-ico">
+                    <svg width="12" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.297 8.5625C9.23185 8.5625 7.55176 10.2307 7.55176 12.2812C7.55176 14.3318 9.23185 16 11.297 16C13.3795 16 15.0737 14.3318 15.0737 12.2812C15.0737 10.2307 13.3795 8.5625 11.297 8.5625ZM12.4465 11.8313L11.1876 13.3313C11.0973 13.4389 10.9641 13.5 10.8249 13.5C10.8068 13.5 10.7887 13.499 10.7705 13.4969C10.6122 13.4786 10.4739 13.3824 10.4026 13.2409L9.89907 12.2409C9.78247 12.0093 9.87701 11.7278 10.1102 11.612C10.3434 11.4962 10.627 11.5901 10.7436 11.8216L10.9243 12.1806L11.7211 11.2312C11.888 11.0323 12.1857 11.0055 12.386 11.1711C12.5863 11.3369 12.6134 11.6324 12.4465 11.8313Z"
+                        fill="#005FB1" />
+                      <path
+                        d="M11.0952 2.67041L9.17968 0.703562C9.17877 0.702625 9.17782 0.701656 9.17691 0.700719C8.73588 0.255406 8.1222 0 7.49329 0H1.41626C0.635335 0 0 0.630844 0 1.40625V13.5625C0 14.3379 0.635335 14.9687 1.41626 14.9687H7.47126C6.92858 14.209 6.60922 13.2815 6.60922 12.2812C6.60922 9.71378 8.71288 7.625 11.2986 7.625C11.4579 7.625 11.6154 7.63294 11.7707 7.64822V4.31187C11.7707 3.69409 11.5308 3.11125 11.0952 2.67041ZM5.00413 10.4687H2.48633C2.22561 10.4687 2.01424 10.2589 2.01424 10C2.01424 9.74112 2.22561 9.53125 2.48633 9.53125H5.00413C5.26485 9.53125 5.47621 9.74112 5.47621 10C5.47621 10.2589 5.26485 10.4687 5.00413 10.4687ZM5.00413 7.96875H2.48633C2.22561 7.96875 2.01424 7.75887 2.01424 7.5C2.01424 7.24112 2.22561 7.03125 2.48633 7.03125H5.00413C5.26485 7.03125 5.47621 7.24112 5.47621 7.5C5.47621 7.75887 5.26485 7.96875 5.00413 7.96875ZM5.00413 5.46875H2.48633C2.22561 5.46875 2.01424 5.25887 2.01424 5C2.01424 4.74112 2.22561 4.53125 2.48633 4.53125H5.00413C5.26485 4.53125 5.47621 4.74112 5.47621 5C5.47621 5.25887 5.26485 5.46875 5.00413 5.46875ZM8.02549 7.96875H7.52193C7.26121 7.96875 7.04984 7.75887 7.04984 7.5C7.04984 7.24112 7.26121 7.03125 7.52193 7.03125H8.02549C8.28621 7.03125 8.49757 7.24112 8.49757 7.5C8.49757 7.75887 8.28621 7.96875 8.02549 7.96875ZM8.02549 5.46875H7.52193C7.26121 5.46875 7.04984 5.25887 7.04984 5C7.04984 4.74112 7.26121 4.53125 7.52193 4.53125H8.02549C8.28621 4.53125 8.49757 4.74112 8.49757 5C8.49757 5.25887 8.28621 5.46875 8.02549 5.46875Z"
+                        fill="#005FB1" />
+                    </svg>
+                  </td>
+                  <td>
+                    <div class="taskPopup-center-table-txt">
+                      Возвращённая посылка прибыла в международный терминал
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-type="notif">
+                  <td>
+                    <span>
+                      26/10/2020 13:39
+                    </span>
+                  </td>
+                  <td class="taskPopup-center-table-td-ico red-ico">
+                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.41533 16C5.93533 15.92 5.45532 15.76 5.05532 15.44C4.73532 15.2 4.49533 14.88 4.49533 14.48C4.49533 14.08 4.89533 13.92 5.21533 13.84C6.25533 13.76 7.37533 13.76 8.41533 13.84C8.73533 13.92 9.13532 14.08 9.13532 14.48C9.13532 14.88 8.89534 15.2 8.57534 15.44C8.17534 15.76 7.69533 15.92 7.21533 16C7.05533 16 6.97533 16 6.81533 16C6.65533 16 6.57533 16 6.41533 16ZM3.05532 12.56C2.17532 12.48 1.37532 12.08 0.735323 11.44C0.255323 10.88 0.0153277 10.24 0.0153277 9.52C-0.0646723 8.88 0.175337 8.16 0.575337 7.68C1.13534 7.04 1.45532 6.24 1.45532 5.44V5.12C1.37532 4 1.77533 2.88 2.49533 2C3.53533 0.72 5.13533 0 6.81533 0H6.89533C8.57533 0 10.1753 0.799999 11.2953 2.08C11.9353 2.96 12.3353 4 12.2553 5.04V5.36C12.2553 6.24 12.4953 7.04 13.1353 7.6C13.5353 8.16 13.7753 8.8 13.6953 9.44C13.6953 10.16 13.4553 10.8 12.9753 11.36C12.3353 12 11.5353 12.4 10.6553 12.48C9.37532 12.56 8.17533 12.64 6.89533 12.64C5.53533 12.8 4.25532 12.72 3.05532 12.56Z"
+                        fill="#FF0000" />
+                    </svg>
+                  </td>
+                  <td>
+                    <div class="taskPopup-center-table-txt has-content" onclick="openTableDesc(this)">
+                      Отправлено сообщение, шаблон Альфа
+                    </div>
+                    <div class="taskPopup-center-table-desc">
+                      Доброго дня, Паламарчук Татьяна Владимировна ! Ми намагались Вам
+                      доставити
+                      посилку № CV876863855CZ з Вашим замовленням №1028989997, але на жаль, Ви
+                      її
+                      не отримали. На даному етапі посилка готується до повернення в Чехію.
+                      Але Ви
+                      маєте можливість оформіть її повторну доставку без додаткових оплат.
+                      Якщо
+                      для Вас посилка вже не актуальна, Ви зможете обрати причину відмови від
+                      замовлення. Будемо вдячні за Вашу відповідь, оскільки вона допоможе нам
+                      покращити наш сервіс. Дякуємо. З повагою до Вас, Notino
+                    </div>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+
+          <div class="taskPopup-center-inner" data-center="create">
+
+            <div class="taskPopup-create-task active" data-task="delivery">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Отмена доставки
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-content-title">Комментарий</div>
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+                    <textarea name="text" id="text"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-task-form-bottom">
+                      <div class="taskPopup-create-task-radio">
+                        <label class="taskPopup-create-task-radio-label" for="delivery">
+                          <span>Высокий приоритет</span>
+                          <input class="taskPopup-create-task-radio-input" type="checkbox" id="delivery">
+                          <span class="taskPopup-create-task-radio-span"></span>
+                        </label>
+                      </div>
+                      <div class="taskPopup-create-btns">
+                        <button class="taskPopup-create-btn">
+                          Создать задачу
+                        </button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="renewal">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Претензия
+                </span>
+
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+                    <textarea name="text" id="text2"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="delivery">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="renewal">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, если получатель отказался от посылки и
+                      посылку
+                      необходимо в кратчайшие сроки вернуть обратно к отправителю. Задача
+                      создается нажатием кнопки Подтвердить. Обучающий ролик к задаче можно
+                      посмотреть здесь:
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="restartTask">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Возобновление доставки
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-content-title">Комментарий</div>
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <textarea name="text" id="restartTask-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-task-form-bottom">
+                      <div class="taskPopup-create-task-radio">
+                        <label class="taskPopup-create-task-radio-label" for="delivery">
+                          <span>Высокий приоритет</span>
+                          <input class="taskPopup-create-task-radio-input" type="checkbox" id="delivery">
+                          <span class="taskPopup-create-task-radio-span"></span>
+                        </label>
+                      </div>
+                      <div class="taskPopup-create-btns">
+                        <button class="taskPopup-create-btn">
+                          Создать задачу
+                        </button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="claim">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Претензия
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <div class="taskPopup-create-radio-type">
+                      <div class="taskPopup-create-radio-title">
+                        Тип претензии:
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="Package" id="radioType1" checked>
+                        <label class="taskPopup-create-radio-type-label" for="radioType1">
+                          Посылка потерянная
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="Package" id="radioType2">
+                        <label class="taskPopup-create-radio-type-label" for="radioType2">
+                          Посылка поврежденная
+                        </label>
+                      </div>
+                    </div>
+
+
+                    <textarea name="text" id="text3"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-files">
+                      <div class="taskPopup-create-files-title">
+                        Файлы
+                      </div>
+                      <div class="taskPopup-create-files-block" style="height: 65px; ">
+
+                      </div>
+
+                      <div class="taskPopup-create-files-type">
+                        Поддерживаемые форматы файлов: jpeg,png,pdf
+                      </div>
+
+                    </div>
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="claim">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="claim">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, когда необходимо к посылке оформить
+                      претензию
+                      в связи с ее повреждением в процессе доставки. Например: поступила
+                      жалоба от
+                      получателя после факта доставки посылки. Желательно дописать к задаче
+                      сообщение (конкретизацию случая) и добавить(прикрепить) фотографии
+                      повреждённой посылки.
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="complaint">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Жалоба
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <div class="taskPopup-create-radio-type">
+                      <div class="taskPopup-create-radio-title">
+                        Тип претензии:
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="Package" id="radioType3" checked>
+                        <label class="taskPopup-create-radio-type-label" for="radioType3">
+                          Нет СМС
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="Package" id="radioType4">
+                        <label class="taskPopup-create-radio-type-label" for="radioType4">
+                          Курьер
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="Package" id="radioType5">
+                        <label class="taskPopup-create-radio-type-label" for="radioType5">
+                          Срок доставки
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="Package" id="radioType6">
+                        <label class="taskPopup-create-radio-type-label" for="radioType6">
+                          Наложенный платеж
+                        </label>
+                      </div>
+                    </div>
+
+
+                    <textarea name="text" id="text4"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-files">
+                      <div class="taskPopup-create-files-title">
+                        Файлы
+                      </div>
+                      <div class="taskPopup-create-files-block" style="height: 65px;">
+
+                      </div>
+
+                      <div class="taskPopup-create-files-type">
+                        Поддерживаемые форматы файлов: jpeg,png,pdf
+                      </div>
+
+                    </div>
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="complaint">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="complaint">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, когда необходимо к посылке оформить
+                      претензию
+                      в связи с ее повреждением в процессе доставки. Например: поступила
+                      жалоба от
+                      получателя после факта доставки посылки. Желательно дописать к задаче
+                      сообщение (конкретизацию случая) и добавить(прикрепить) фотографии
+                      повреждённой посылки.
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="extended">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Продление срока хранения
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <div class="taskPopup-create-calendar">
+                      <div class="taskPopup-create-calendar-title">
+                        Продлить срок хранения до:
+                      </div>
+                      <div class="taskPopup-create-calendar-item">
+                        <input type="text" class="daterange-input" data-money="10" />
+                      </div>
+                    </div>
+                    <div class="taskPopup-create-calendar-calc">
+                      Получатель заплатит:
+                      <span id="calculate-days" class="select-money">0 </span>
+                      <span> UAH</span>
+                    </div>
+
+                    <textarea name="text" id="extended-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="extended-2">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="extended-2">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, если необходимо продлить срок хранения
+                      посылки
+                      на отделении Новой Почты. Например, когда получатель понимает, что не
+                      успеет
+                      забрать посылку на протяжении стандартного срока 5 дней от даты
+                      поступления
+                      посылки на отделение Новой Почты. Для продления срока хранения посылки
+                      используется календарь. Календарь автоматически предлагает доступный
+                      срок
+                      продления и под ним указывается сума, которую получателю посылки
+                      необходимо
+                      доплатить на отделении. Задача создается нажатием кнопки Подтвердить.
+                      Обучающий ролик к задаче можно посмотреть здесь:
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="сlarification">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Уточнение
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+                    <div class="taskPopup-row">
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              № телефона:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              ФИО получателя:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="taskPopup-create-radio-type">
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input class="showFields" type="radio" name="сlarification" id="сlarification3" checked
+                          onchange="changeClarification(this)">
+                        <label class="taskPopup-create-radio-type-label" for="сlarification3">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.89575 9.62979L8.10358 6.73154C8.08577 6.66637 8.04598 6.60934 7.99094 6.57014C6.73526 5.6759 7.14688 5.96902 6.07342 5.20461C6.48088 4.7859 6.71577 4.21984 6.71577 3.6273C6.71577 2.44605 6.72362 2.38141 6.68899 2.1659C6.6762 0.929336 5.73899 0 4.49868 0H4.40758C3.16729 0 2.23008 0.929336 2.21729 2.16592C2.18266 2.38143 2.19051 2.44602 2.19051 3.62732C2.19051 4.21982 2.4254 4.78588 2.83288 5.20463C1.47444 6.17197 2.26819 5.60672 0.915336 6.57016C0.860297 6.60936 0.820492 6.66639 0.80268 6.73156L0.0105119 9.6298C-0.0404061 9.81611 0.100082 10 0.29311 10H4.16018V6.90396L4.45315 6.71148L4.74612 6.90396V10H8.61319C8.80631 10 8.94665 9.81596 8.89575 9.62979ZM4.26182 0.949258H4.64446C4.80625 0.949258 4.93743 1.08043 4.93743 1.24223C4.93743 1.40402 4.80625 1.5352 4.64446 1.5352H4.26182C4.10002 1.5352 3.96885 1.40402 3.96885 1.24223C3.96885 1.08043 4.10002 0.949258 4.26182 0.949258ZM4.1602 6.20287L3.51577 6.62629L2.65614 6.0498L3.31438 5.58105C3.58344 5.73799 3.87407 5.83187 4.1602 5.86871V6.20287ZM4.45315 5.30156C3.52258 5.30156 2.77645 4.54635 2.77645 3.62732C2.77643 3.41752 2.7762 3.24389 2.776 3.0985L2.9335 3.32844C2.98811 3.40818 3.07854 3.45584 3.1752 3.45584H5.73108C5.82772 3.45584 5.91815 3.40818 5.97278 3.32844L6.13028 3.0985C6.13008 3.24387 6.12985 3.41752 6.12985 3.62732C6.12985 4.53813 5.392 5.30156 4.45315 5.30156ZM4.7461 6.20287V5.86869C5.04747 5.82994 5.33579 5.73045 5.5919 5.58104L6.25014 6.04979L5.39051 6.62627L4.7461 6.20287ZM6.94196 8.75182H5.91465C5.75286 8.75182 5.62168 8.62064 5.62168 8.45885C5.62168 8.29705 5.75286 8.16588 5.91465 8.16588H6.94196C7.10375 8.16588 7.23493 8.29705 7.23493 8.45885C7.23493 8.62064 7.10375 8.75182 6.94196 8.75182Z"
+                                fill="#5081E9" />
+                            </svg>
+                          </div>
+                          Курьер
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="сlarification" id="сlarification4"
+                          onchange="changeClarification(this)">
+                        <label class="taskPopup-create-radio-type-label" for="сlarification4">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path
+                                  d="M0.168753 7.23046C-0.054104 6.99997 -0.0557923 6.86339 0.168753 6.64144C0.909922 5.87827 1.66291 5.12193 2.41421 4.36217C2.47668 4.30071 2.53914 4.20168 2.63369 4.23753C2.72823 4.27339 2.70797 4.40827 2.70797 4.50388C2.70797 5.3268 2.70797 6.14973 2.70797 6.97436C2.70797 7.799 2.70797 8.57924 2.70797 9.38168C2.70797 9.46534 2.7468 9.57802 2.64213 9.62241C2.53745 9.6668 2.4733 9.56949 2.42096 9.50802C1.67023 8.74656 0.919489 7.98737 0.168753 7.23046Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M6.2623 13.3905C5.49581 12.6188 4.73044 11.8454 3.9662 11.0702C3.91048 11.0139 3.83113 10.9558 3.87503 10.8688C3.91893 10.7817 4.00841 10.7937 4.08776 10.7937H4.95217C5.00309 10.8002 5.05483 10.795 5.10344 10.7783C5.15206 10.7617 5.19628 10.734 5.23275 10.6975C5.26921 10.6609 5.29695 10.6165 5.31386 10.5675C5.33078 10.5184 5.33642 10.4662 5.33035 10.4146C5.33035 10.1227 5.33035 9.83243 5.33035 9.54048C5.33035 9.24853 5.33035 8.95829 5.33035 8.66804C5.33035 8.3778 5.44009 8.24463 5.73724 8.24292C6.27243 8.24292 6.80932 8.24292 7.34451 8.24292C7.64334 8.24292 7.74802 8.35219 7.74971 8.66804C7.74971 9.23999 7.74971 9.81194 7.74971 10.3839C7.74971 10.7117 7.83412 10.7937 8.15659 10.7988C8.4149 10.7988 8.67321 10.7988 8.93152 10.7988C9.01087 10.7988 9.10035 10.7988 9.14425 10.8722C9.18815 10.9456 9.11048 11.019 9.05477 11.0754C8.2894 11.8493 7.52403 12.6228 6.75867 13.3956C6.72804 13.4322 6.68981 13.4615 6.64671 13.4814C6.60361 13.5013 6.55669 13.5114 6.50929 13.5109C6.4619 13.5105 6.4152 13.4994 6.37251 13.4786C6.32982 13.4578 6.29219 13.4277 6.2623 13.3905Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M3.82367 3.06125C3.77471 2.9571 3.86419 2.89052 3.92497 2.83417L6.01172 0.725638C6.13924 0.57584 6.28837 0.446336 6.45406 0.341492C6.45904 0.366107 6.45654 0.391668 6.4469 0.414823C6.43726 0.437978 6.42092 0.457646 6.40004 0.471248C5.60822 1.15417 4.91432 1.95149 4.16302 2.69076C4.12757 2.72491 4.09043 2.76076 4.05835 2.79832C4.02627 2.83588 3.93848 2.90076 3.96549 2.96905C3.9925 3.03734 4.10224 3.03393 4.17653 3.03564C4.37406 3.03564 4.57328 3.03564 4.7725 3.03564C5.2638 3.03564 5.39549 3.17222 5.40055 3.66052C5.40055 4.12149 5.40055 4.58417 5.40055 5.04686C5.40055 5.38832 5.50692 5.49759 5.84796 5.50442C6.31562 5.51296 6.78328 5.51466 7.24926 5.50442C7.5751 5.50442 7.67471 5.39174 7.67978 5.06052C7.68991 4.59954 7.67978 4.13686 7.67978 3.67417C7.67978 3.16198 7.81315 3.04076 8.32302 3.03564C8.50198 3.03564 8.68094 3.03564 8.85991 3.03564C8.92575 3.03564 9.01354 3.05613 9.04393 2.97417C9.07432 2.89222 9.00341 2.84442 8.95614 2.80344C8.61848 2.46198 8.28081 2.12052 7.94315 1.77905C7.50081 1.34539 7.099 0.875882 6.61614 0.479784C6.59504 0.464618 6.57935 0.442951 6.57144 0.418022C6.56353 0.393094 6.56381 0.366245 6.57224 0.341492C6.70423 0.421612 6.8223 0.523128 6.92172 0.641979C7.63307 1.35905 8.34216 2.07613 9.049 2.7932C9.12159 2.86661 9.25328 2.9332 9.18913 3.06295C9.12497 3.19271 9.01017 3.11588 8.91731 3.1193C8.659 3.1193 8.40068 3.1193 8.14237 3.1193C8.08778 3.11012 8.03182 3.11424 7.97912 3.13133C7.92643 3.14842 7.87853 3.17797 7.8394 3.21755C7.80027 3.25712 7.77104 3.30556 7.75414 3.35884C7.73725 3.41213 7.73317 3.46873 7.74224 3.52393C7.74224 4.05661 7.74224 4.5893 7.74224 5.12198C7.74224 5.48222 7.63757 5.58125 7.27627 5.58295C6.76978 5.58295 6.26328 5.58295 5.75679 5.58295C5.43601 5.58295 5.32458 5.47369 5.3212 5.15271C5.3212 4.62174 5.3212 4.08905 5.3212 3.55637C5.3212 3.23027 5.21822 3.12613 4.89575 3.12271C4.60705 3.12271 4.32004 3.12271 4.03133 3.12271C3.9638 3.1193 3.86588 3.15174 3.82367 3.06125Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M10.3717 9.25879C10.3717 8.47513 10.3717 7.69318 10.3717 6.91122C10.3717 6.12927 10.3717 5.34561 10.3717 4.56366C10.3717 4.46976 10.3329 4.3383 10.4477 4.29561C10.5625 4.25293 10.6165 4.37244 10.6874 4.43903C11.4044 5.16179 12.1191 5.88513 12.8316 6.60903C13.0916 6.87537 13.0899 6.99318 12.8231 7.26293C12.1174 7.98 11.4083 8.69594 10.6959 9.41074C10.625 9.48244 10.5608 9.62244 10.4342 9.55927C10.3076 9.4961 10.3717 9.36122 10.3717 9.25879Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M9.19654 3.06295C9.1442 3.17052 9.01758 3.11588 8.92472 3.1193C8.66641 3.1193 8.4081 3.1193 8.14979 3.1193C8.0952 3.11012 8.03923 3.11424 7.98654 3.13133C7.93384 3.14842 7.88594 3.17797 7.84681 3.21755C7.80768 3.25712 7.77846 3.30556 7.76156 3.35884C7.74466 3.41213 7.74058 3.46873 7.74966 3.52393C7.74966 4.05661 7.74966 4.5893 7.74966 5.12198C7.74966 5.48222 7.64498 5.58125 7.28368 5.58295C6.77719 5.58295 6.2707 5.58295 5.7642 5.58295C5.44342 5.58295 5.332 5.47369 5.32862 5.15271C5.32862 4.62174 5.32862 4.08905 5.32862 3.55637C5.32862 3.23027 5.22563 3.12613 4.90316 3.12271C4.61446 3.12271 4.32745 3.12271 4.03875 3.12271C3.96446 3.12271 3.86992 3.15515 3.82433 3.06466C3.77875 2.97417 3.86485 2.89393 3.92563 2.83759L6.01238 0.725638C6.13991 0.57584 6.28903 0.446336 6.45472 0.341492H6.5729C6.70489 0.421612 6.82296 0.523128 6.92238 0.641979C7.63373 1.35905 8.34282 2.07613 9.04966 2.7932C9.12901 2.86661 9.2607 2.9332 9.19654 3.06295Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M9.05807 11.0702C8.2927 11.8442 7.52733 12.6176 6.76196 13.3905C6.73178 13.4292 6.69331 13.4605 6.64945 13.482C6.60558 13.5035 6.55747 13.5147 6.50871 13.5147C6.45996 13.5147 6.41184 13.5035 6.36798 13.482C6.32412 13.4605 6.28565 13.4292 6.25547 13.3905C5.48897 12.6188 4.72361 11.8454 3.95936 11.0702C3.90365 11.0139 3.8243 10.9558 3.86819 10.8688C3.91209 10.7817 4.00157 10.7937 4.08092 10.7937H4.94534C4.99677 10.8014 5.04928 10.797 5.09877 10.7809C5.14826 10.7647 5.19339 10.7372 5.23065 10.7006C5.2679 10.6639 5.29628 10.619 5.31356 10.5694C5.33084 10.5198 5.33656 10.4668 5.33027 10.4146C5.33027 10.1227 5.33027 9.83243 5.33027 9.54048C5.33027 9.24853 5.33027 8.95829 5.33027 8.66804C5.33027 8.3778 5.44001 8.24463 5.73716 8.24292C6.27235 8.24292 6.80923 8.24292 7.34443 8.24292C7.64326 8.24292 7.74794 8.35219 7.74962 8.66804C7.74962 9.23999 7.74962 9.81194 7.74962 10.3839C7.74962 10.7117 7.83404 10.7937 8.15651 10.7988C8.41482 10.7988 8.67313 10.7988 8.93144 10.7988C9.01079 10.7988 9.10027 10.7988 9.14417 10.8722C9.18807 10.9456 9.11716 11.0139 9.05807 11.0702Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M2.70122 9.39022C2.70122 9.47388 2.74005 9.58656 2.63538 9.63095C2.5307 9.67534 2.46655 9.57802 2.41421 9.51656C1.66797 8.74941 0.919489 7.98737 0.168753 7.23046C-0.054104 6.99997 -0.0557923 6.86339 0.168753 6.64144C0.909922 5.87827 1.66291 5.12193 2.41421 4.36217C2.47668 4.30071 2.53914 4.20168 2.63369 4.23753C2.72823 4.27339 2.70797 4.40827 2.70797 4.50388C2.70797 5.3268 2.70797 6.14973 2.70797 6.97436C2.70797 7.799 2.71135 8.57924 2.70122 9.39022Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M12.8308 7.26293C12.1251 7.98 11.416 8.69594 10.7036 9.41074C10.6326 9.48244 10.5685 9.62244 10.4419 9.55927C10.3152 9.4961 10.3777 9.36122 10.3777 9.25879C10.3777 8.47513 10.3777 7.69318 10.3777 6.91122C10.3777 6.12927 10.3777 5.34561 10.3777 4.56366C10.3777 4.46976 10.3389 4.3383 10.4537 4.29561C10.5685 4.25293 10.6225 4.37244 10.6934 4.43903C11.4059 5.16179 12.1184 5.88513 12.8308 6.60903C13.0925 6.87537 13.0908 7 12.8308 7.26293Z"
+                                  fill="#EE1616" />
+                              </g>
+                            </svg>
+                          </div>
+                          Нова почта
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="сlarification" id="сlarification5"
+                          onchange="changeClarification(this)">
+                        <label class="taskPopup-create-radio-type-label" for="сlarification5">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.60964 7.46485L4.26823 6.48846C3.72623 6.36665 3.24356 6.06202 2.90246 5.62648C2.56137 5.19094 2.38296 4.65145 2.39766 4.09996C2.41235 3.54846 2.61924 3.01908 2.98305 2.60206C3.34686 2.18503 3.84509 1.90616 4.39281 1.81297C4.94054 1.71978 5.50387 1.81805 5.98679 2.09102C6.46971 2.36398 6.84234 2.79476 7.04116 3.30993C7.23999 3.8251 7.25271 4.39278 7.07716 4.91622C6.90161 5.43966 6.54864 5.88646 6.07843 6.18048C6.06886 6.18699 6.06141 6.19613 6.05699 6.20677C6.05257 6.21742 6.05137 6.22911 6.05354 6.24043C6.05571 6.25174 6.06115 6.26218 6.06921 6.27046C6.07726 6.27875 6.08757 6.28453 6.09888 6.28709L8.0301 6.72029C8.0524 6.72523 8.07566 6.72371 8.09711 6.71591C8.11856 6.70811 8.13731 6.69436 8.15112 6.67629C8.60931 6.07421 8.89434 5.35998 8.9758 4.60973C9.05727 3.85948 8.93213 3.10135 8.61372 2.41616C8.29531 1.73097 7.79556 1.14441 7.16777 0.719007C6.53997 0.293607 5.80766 0.0453177 5.0489 0.000610292H4.87845C3.99423 -0.0134357 3.12328 0.215214 2.36163 0.661346C1.59999 1.10748 0.977244 1.75376 0.562067 2.52893C0.146889 3.3041 -0.0445907 4.17803 0.00874117 5.05437C0.0620731 5.93071 0.358145 6.77541 0.864309 7.49531L4.72504 12.9628C4.7336 12.9741 4.74465 12.9833 4.75735 12.9898C4.77005 12.9963 4.78407 12.9997 4.79834 13C4.81262 12.9999 4.82669 12.9964 4.83941 12.99C4.85213 12.9835 4.86316 12.9742 4.87163 12.9628L8.66077 7.60192C8.67092 7.58692 8.67627 7.56922 8.67611 7.55115C8.67627 7.53123 8.66961 7.51184 8.65722 7.49617C8.64484 7.48049 8.62746 7.46945 8.60793 7.46485"
+                                fill="#FABC26" />
+                            </svg>
+                          </div>
+                          Укрпочта
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="сlarification" id="сlarification6"
+                          onchange="changeClarification(this)">
+                        <label class="taskPopup-create-radio-type-label" for="сlarification6">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path
+                                  d="M1.6543 9.90826V10.6558C1.6543 10.8459 1.80838 11 1.99855 11H3.75465C3.94473 11 4.0989 10.8459 4.0989 10.6558V9.90826H1.6543Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M6.9209 9.90826V10.6558C6.9209 10.8459 7.07498 11 7.26515 11H9.02125C9.21133 11 9.3655 10.8459 9.3655 10.6558V9.90826H6.9209Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M1.6543 6.60553V9.21983H9.36501V6.60553H1.6543ZM6.17516 7.79791H4.84414C4.65405 7.79791 4.49989 7.64383 4.49989 7.45366C4.49989 7.26357 4.65405 7.10949 4.84414 7.10949H6.17516C6.36525 7.10949 6.51942 7.26357 6.51942 7.45366C6.51942 7.64383 6.36525 7.79791 6.17516 7.79791Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M9.36501 5.91703V3.30273H1.6543V5.91703H9.36501ZM4.84414 3.80669H6.17516C6.36525 3.80669 6.51942 3.96086 6.51942 4.15095C6.51942 4.34103 6.36525 4.4952 6.17516 4.4952H4.84414C4.65405 4.4952 4.49989 4.34103 4.49989 4.15095C4.49989 3.96086 4.65405 3.80669 4.84414 3.80669Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M9.36501 2.6143V0.344254C9.36501 0.154083 9.21092 0 9.02075 0H1.99855C1.80838 0 1.6543 0.154083 1.6543 0.344254V2.6143H9.36501ZM6.17516 1.19238H4.84414C4.65405 1.19238 4.49989 1.0383 4.49989 0.848213C4.49989 0.658043 4.65405 0.50396 4.84414 0.50396H6.17516C6.36525 0.50396 6.51942 0.658043 6.51942 0.848213C6.51942 1.0383 6.36525 1.19238 6.17516 1.19238Z"
+                                  fill="#005FB1" />
+                              </g>
+                            </svg>
+                          </div>
+                          АПТ
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="сlarification" id="сlarification7"
+                          onchange="changeClarification(this)">
+                        <label class="taskPopup-create-radio-type-label" for="сlarification7">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="12" viewBox="0 0 9 12" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.6339 6.30809C7.74011 8.04863 6.83286 9.77674 5.91217 11.4924C5.87548 11.5636 5.82489 11.6259 5.76367 11.6754C5.70246 11.7248 5.63199 11.7603 5.55683 11.7794C4.65993 11.8054 3.76148 11.794 2.78079 11.794C2.88166 11.5816 2.94838 11.4292 3.02442 11.2832C3.87166 9.6616 4.71424 8.03998 5.57545 6.4362C5.6547 6.3142 5.69707 6.17014 5.69707 6.02268C5.69707 5.87523 5.6547 5.73117 5.57545 5.60917C4.69097 3.9762 3.83131 2.32863 2.967 0.684306C2.90338 0.564306 2.85683 0.436198 2.77148 0.243225C3.74442 0.243225 4.65528 0.243225 5.56459 0.252955C5.62764 0.267088 5.68703 0.295264 5.73871 0.335562C5.79039 0.37586 5.83315 0.427333 5.86407 0.486468C6.79511 2.2362 7.72614 3.98755 8.63855 5.75025C8.67493 5.83846 8.69331 5.93363 8.6925 6.02968C8.6917 6.12573 8.67174 6.22056 8.6339 6.30809Z"
+                                fill="#E8002C" />
+                              <path
+                                d="M2.61776 7.46917C2.60372 7.52888 2.57523 7.58381 2.53501 7.62868C2.49479 7.67355 2.4442 7.70685 2.3881 7.72539C1.60138 7.74647 0.811552 7.73836 0 7.73836V4.37836H2.62862C2.62862 5.43403 2.63793 6.45241 2.61776 7.46917Z"
+                                fill="#005FB1" />
+                            </svg>
+                          </div>
+                          Meest Point
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="taskPopup-select-block">
+                      <div class="taskPopup-select-block-top">
+                        <div class="taskPopup-select-block-left">
+                          Город:
+                        </div>
+                        <div class="taskPopup-select-block-right">
+                          <a href="javascript:void(0)" class="copy"></a>
+                        </div>
+                      </div>
+                      <select class="taskPopup-select" name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+
+                    <div class="taskPopup-select-block">
+                      <div class="taskPopup-select-block-top">
+                        <div class="taskPopup-select-block-left">
+                          Отделение:
+                        </div>
+                        <div class="taskPopup-select-block-right">
+                          <a href="javascript:void(0);" class="copy"></a>
+                        </div>
+                      </div>
+                      <select class="taskPopup-select" name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+
+                    <div class="taskPopup-row fields-clarification">
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              № дома:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              № квартиры:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <textarea name="text" id="сlarification-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="сlarification-2">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="сlarification-2">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, когда службе доставки необходимо передать
+                      уточнение номера телефона получателя или адреса для доставки посылки
+                      (например, когда получатель при оформлении заказа ввел неправильные
+                      дание).
+                      Для создания задачи нужно выбрать подтип задачи.
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="forwarding">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Переадресация
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+                    <div class="taskPopup-row">
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              № телефона:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              ФИО получателя:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="taskPopup-create-radio-type">
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input class="showForwarding" type="radio" name="forwarding" id="forwarding3" checked
+                          onchange="changeForwarding(this)">
+                        <label class="taskPopup-create-radio-type-label" for="forwarding3">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.89575 9.62979L8.10358 6.73154C8.08577 6.66637 8.04598 6.60934 7.99094 6.57014C6.73526 5.6759 7.14688 5.96902 6.07342 5.20461C6.48088 4.7859 6.71577 4.21984 6.71577 3.6273C6.71577 2.44605 6.72362 2.38141 6.68899 2.1659C6.6762 0.929336 5.73899 0 4.49868 0H4.40758C3.16729 0 2.23008 0.929336 2.21729 2.16592C2.18266 2.38143 2.19051 2.44602 2.19051 3.62732C2.19051 4.21982 2.4254 4.78588 2.83288 5.20463C1.47444 6.17197 2.26819 5.60672 0.915336 6.57016C0.860297 6.60936 0.820492 6.66639 0.80268 6.73156L0.0105119 9.6298C-0.0404061 9.81611 0.100082 10 0.29311 10H4.16018V6.90396L4.45315 6.71148L4.74612 6.90396V10H8.61319C8.80631 10 8.94665 9.81596 8.89575 9.62979ZM4.26182 0.949258H4.64446C4.80625 0.949258 4.93743 1.08043 4.93743 1.24223C4.93743 1.40402 4.80625 1.5352 4.64446 1.5352H4.26182C4.10002 1.5352 3.96885 1.40402 3.96885 1.24223C3.96885 1.08043 4.10002 0.949258 4.26182 0.949258ZM4.1602 6.20287L3.51577 6.62629L2.65614 6.0498L3.31438 5.58105C3.58344 5.73799 3.87407 5.83187 4.1602 5.86871V6.20287ZM4.45315 5.30156C3.52258 5.30156 2.77645 4.54635 2.77645 3.62732C2.77643 3.41752 2.7762 3.24389 2.776 3.0985L2.9335 3.32844C2.98811 3.40818 3.07854 3.45584 3.1752 3.45584H5.73108C5.82772 3.45584 5.91815 3.40818 5.97278 3.32844L6.13028 3.0985C6.13008 3.24387 6.12985 3.41752 6.12985 3.62732C6.12985 4.53813 5.392 5.30156 4.45315 5.30156ZM4.7461 6.20287V5.86869C5.04747 5.82994 5.33579 5.73045 5.5919 5.58104L6.25014 6.04979L5.39051 6.62627L4.7461 6.20287ZM6.94196 8.75182H5.91465C5.75286 8.75182 5.62168 8.62064 5.62168 8.45885C5.62168 8.29705 5.75286 8.16588 5.91465 8.16588H6.94196C7.10375 8.16588 7.23493 8.29705 7.23493 8.45885C7.23493 8.62064 7.10375 8.75182 6.94196 8.75182Z"
+                                fill="#5081E9" />
+                            </svg>
+                          </div>
+                          Курьер
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="forwarding" id="forwarding4" onchange="changeForwarding(this)">
+                        <label class="taskPopup-create-radio-type-label" for="forwarding4">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path
+                                  d="M0.168753 7.23046C-0.054104 6.99997 -0.0557923 6.86339 0.168753 6.64144C0.909922 5.87827 1.66291 5.12193 2.41421 4.36217C2.47668 4.30071 2.53914 4.20168 2.63369 4.23753C2.72823 4.27339 2.70797 4.40827 2.70797 4.50388C2.70797 5.3268 2.70797 6.14973 2.70797 6.97436C2.70797 7.799 2.70797 8.57924 2.70797 9.38168C2.70797 9.46534 2.7468 9.57802 2.64213 9.62241C2.53745 9.6668 2.4733 9.56949 2.42096 9.50802C1.67023 8.74656 0.919489 7.98737 0.168753 7.23046Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M6.2623 13.3905C5.49581 12.6188 4.73044 11.8454 3.9662 11.0702C3.91048 11.0139 3.83113 10.9558 3.87503 10.8688C3.91893 10.7817 4.00841 10.7937 4.08776 10.7937H4.95217C5.00309 10.8002 5.05483 10.795 5.10344 10.7783C5.15206 10.7617 5.19628 10.734 5.23275 10.6975C5.26921 10.6609 5.29695 10.6165 5.31386 10.5675C5.33078 10.5184 5.33642 10.4662 5.33035 10.4146C5.33035 10.1227 5.33035 9.83243 5.33035 9.54048C5.33035 9.24853 5.33035 8.95829 5.33035 8.66804C5.33035 8.3778 5.44009 8.24463 5.73724 8.24292C6.27243 8.24292 6.80932 8.24292 7.34451 8.24292C7.64334 8.24292 7.74802 8.35219 7.74971 8.66804C7.74971 9.23999 7.74971 9.81194 7.74971 10.3839C7.74971 10.7117 7.83412 10.7937 8.15659 10.7988C8.4149 10.7988 8.67321 10.7988 8.93152 10.7988C9.01087 10.7988 9.10035 10.7988 9.14425 10.8722C9.18815 10.9456 9.11048 11.019 9.05477 11.0754C8.2894 11.8493 7.52403 12.6228 6.75867 13.3956C6.72804 13.4322 6.68981 13.4615 6.64671 13.4814C6.60361 13.5013 6.55669 13.5114 6.50929 13.5109C6.4619 13.5105 6.4152 13.4994 6.37251 13.4786C6.32982 13.4578 6.29219 13.4277 6.2623 13.3905Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M3.82367 3.06125C3.77471 2.9571 3.86419 2.89052 3.92497 2.83417L6.01172 0.725638C6.13924 0.57584 6.28837 0.446336 6.45406 0.341492C6.45904 0.366107 6.45654 0.391668 6.4469 0.414823C6.43726 0.437978 6.42092 0.457646 6.40004 0.471248C5.60822 1.15417 4.91432 1.95149 4.16302 2.69076C4.12757 2.72491 4.09043 2.76076 4.05835 2.79832C4.02627 2.83588 3.93848 2.90076 3.96549 2.96905C3.9925 3.03734 4.10224 3.03393 4.17653 3.03564C4.37406 3.03564 4.57328 3.03564 4.7725 3.03564C5.2638 3.03564 5.39549 3.17222 5.40055 3.66052C5.40055 4.12149 5.40055 4.58417 5.40055 5.04686C5.40055 5.38832 5.50692 5.49759 5.84796 5.50442C6.31562 5.51296 6.78328 5.51466 7.24926 5.50442C7.5751 5.50442 7.67471 5.39174 7.67978 5.06052C7.68991 4.59954 7.67978 4.13686 7.67978 3.67417C7.67978 3.16198 7.81315 3.04076 8.32302 3.03564C8.50198 3.03564 8.68094 3.03564 8.85991 3.03564C8.92575 3.03564 9.01354 3.05613 9.04393 2.97417C9.07432 2.89222 9.00341 2.84442 8.95614 2.80344C8.61848 2.46198 8.28081 2.12052 7.94315 1.77905C7.50081 1.34539 7.099 0.875882 6.61614 0.479784C6.59504 0.464618 6.57935 0.442951 6.57144 0.418022C6.56353 0.393094 6.56381 0.366245 6.57224 0.341492C6.70423 0.421612 6.8223 0.523128 6.92172 0.641979C7.63307 1.35905 8.34216 2.07613 9.049 2.7932C9.12159 2.86661 9.25328 2.9332 9.18913 3.06295C9.12497 3.19271 9.01017 3.11588 8.91731 3.1193C8.659 3.1193 8.40068 3.1193 8.14237 3.1193C8.08778 3.11012 8.03182 3.11424 7.97912 3.13133C7.92643 3.14842 7.87853 3.17797 7.8394 3.21755C7.80027 3.25712 7.77104 3.30556 7.75414 3.35884C7.73725 3.41213 7.73317 3.46873 7.74224 3.52393C7.74224 4.05661 7.74224 4.5893 7.74224 5.12198C7.74224 5.48222 7.63757 5.58125 7.27627 5.58295C6.76978 5.58295 6.26328 5.58295 5.75679 5.58295C5.43601 5.58295 5.32458 5.47369 5.3212 5.15271C5.3212 4.62174 5.3212 4.08905 5.3212 3.55637C5.3212 3.23027 5.21822 3.12613 4.89575 3.12271C4.60705 3.12271 4.32004 3.12271 4.03133 3.12271C3.9638 3.1193 3.86588 3.15174 3.82367 3.06125Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M10.3717 9.25879C10.3717 8.47513 10.3717 7.69318 10.3717 6.91122C10.3717 6.12927 10.3717 5.34561 10.3717 4.56366C10.3717 4.46976 10.3329 4.3383 10.4477 4.29561C10.5625 4.25293 10.6165 4.37244 10.6874 4.43903C11.4044 5.16179 12.1191 5.88513 12.8316 6.60903C13.0916 6.87537 13.0899 6.99318 12.8231 7.26293C12.1174 7.98 11.4083 8.69594 10.6959 9.41074C10.625 9.48244 10.5608 9.62244 10.4342 9.55927C10.3076 9.4961 10.3717 9.36122 10.3717 9.25879Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M9.19654 3.06295C9.1442 3.17052 9.01758 3.11588 8.92472 3.1193C8.66641 3.1193 8.4081 3.1193 8.14979 3.1193C8.0952 3.11012 8.03923 3.11424 7.98654 3.13133C7.93384 3.14842 7.88594 3.17797 7.84681 3.21755C7.80768 3.25712 7.77846 3.30556 7.76156 3.35884C7.74466 3.41213 7.74058 3.46873 7.74966 3.52393C7.74966 4.05661 7.74966 4.5893 7.74966 5.12198C7.74966 5.48222 7.64498 5.58125 7.28368 5.58295C6.77719 5.58295 6.2707 5.58295 5.7642 5.58295C5.44342 5.58295 5.332 5.47369 5.32862 5.15271C5.32862 4.62174 5.32862 4.08905 5.32862 3.55637C5.32862 3.23027 5.22563 3.12613 4.90316 3.12271C4.61446 3.12271 4.32745 3.12271 4.03875 3.12271C3.96446 3.12271 3.86992 3.15515 3.82433 3.06466C3.77875 2.97417 3.86485 2.89393 3.92563 2.83759L6.01238 0.725638C6.13991 0.57584 6.28903 0.446336 6.45472 0.341492H6.5729C6.70489 0.421612 6.82296 0.523128 6.92238 0.641979C7.63373 1.35905 8.34282 2.07613 9.04966 2.7932C9.12901 2.86661 9.2607 2.9332 9.19654 3.06295Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M9.05807 11.0702C8.2927 11.8442 7.52733 12.6176 6.76196 13.3905C6.73178 13.4292 6.69331 13.4605 6.64945 13.482C6.60558 13.5035 6.55747 13.5147 6.50871 13.5147C6.45996 13.5147 6.41184 13.5035 6.36798 13.482C6.32412 13.4605 6.28565 13.4292 6.25547 13.3905C5.48897 12.6188 4.72361 11.8454 3.95936 11.0702C3.90365 11.0139 3.8243 10.9558 3.86819 10.8688C3.91209 10.7817 4.00157 10.7937 4.08092 10.7937H4.94534C4.99677 10.8014 5.04928 10.797 5.09877 10.7809C5.14826 10.7647 5.19339 10.7372 5.23065 10.7006C5.2679 10.6639 5.29628 10.619 5.31356 10.5694C5.33084 10.5198 5.33656 10.4668 5.33027 10.4146C5.33027 10.1227 5.33027 9.83243 5.33027 9.54048C5.33027 9.24853 5.33027 8.95829 5.33027 8.66804C5.33027 8.3778 5.44001 8.24463 5.73716 8.24292C6.27235 8.24292 6.80923 8.24292 7.34443 8.24292C7.64326 8.24292 7.74794 8.35219 7.74962 8.66804C7.74962 9.23999 7.74962 9.81194 7.74962 10.3839C7.74962 10.7117 7.83404 10.7937 8.15651 10.7988C8.41482 10.7988 8.67313 10.7988 8.93144 10.7988C9.01079 10.7988 9.10027 10.7988 9.14417 10.8722C9.18807 10.9456 9.11716 11.0139 9.05807 11.0702Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M2.70122 9.39022C2.70122 9.47388 2.74005 9.58656 2.63538 9.63095C2.5307 9.67534 2.46655 9.57802 2.41421 9.51656C1.66797 8.74941 0.919489 7.98737 0.168753 7.23046C-0.054104 6.99997 -0.0557923 6.86339 0.168753 6.64144C0.909922 5.87827 1.66291 5.12193 2.41421 4.36217C2.47668 4.30071 2.53914 4.20168 2.63369 4.23753C2.72823 4.27339 2.70797 4.40827 2.70797 4.50388C2.70797 5.3268 2.70797 6.14973 2.70797 6.97436C2.70797 7.799 2.71135 8.57924 2.70122 9.39022Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M12.8308 7.26293C12.1251 7.98 11.416 8.69594 10.7036 9.41074C10.6326 9.48244 10.5685 9.62244 10.4419 9.55927C10.3152 9.4961 10.3777 9.36122 10.3777 9.25879C10.3777 8.47513 10.3777 7.69318 10.3777 6.91122C10.3777 6.12927 10.3777 5.34561 10.3777 4.56366C10.3777 4.46976 10.3389 4.3383 10.4537 4.29561C10.5685 4.25293 10.6225 4.37244 10.6934 4.43903C11.4059 5.16179 12.1184 5.88513 12.8308 6.60903C13.0925 6.87537 13.0908 7 12.8308 7.26293Z"
+                                  fill="#EE1616" />
+                              </g>
+                            </svg>
+                          </div>
+                          Нова почта
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="forwarding" id="forwarding5" onchange="changeForwarding(this)">
+                        <label class="taskPopup-create-radio-type-label" for="forwarding5">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.60964 7.46485L4.26823 6.48846C3.72623 6.36665 3.24356 6.06202 2.90246 5.62648C2.56137 5.19094 2.38296 4.65145 2.39766 4.09996C2.41235 3.54846 2.61924 3.01908 2.98305 2.60206C3.34686 2.18503 3.84509 1.90616 4.39281 1.81297C4.94054 1.71978 5.50387 1.81805 5.98679 2.09102C6.46971 2.36398 6.84234 2.79476 7.04116 3.30993C7.23999 3.8251 7.25271 4.39278 7.07716 4.91622C6.90161 5.43966 6.54864 5.88646 6.07843 6.18048C6.06886 6.18699 6.06141 6.19613 6.05699 6.20677C6.05257 6.21742 6.05137 6.22911 6.05354 6.24043C6.05571 6.25174 6.06115 6.26218 6.06921 6.27046C6.07726 6.27875 6.08757 6.28453 6.09888 6.28709L8.0301 6.72029C8.0524 6.72523 8.07566 6.72371 8.09711 6.71591C8.11856 6.70811 8.13731 6.69436 8.15112 6.67629C8.60931 6.07421 8.89434 5.35998 8.9758 4.60973C9.05727 3.85948 8.93213 3.10135 8.61372 2.41616C8.29531 1.73097 7.79556 1.14441 7.16777 0.719007C6.53997 0.293607 5.80766 0.0453177 5.0489 0.000610292H4.87845C3.99423 -0.0134357 3.12328 0.215214 2.36163 0.661346C1.59999 1.10748 0.977244 1.75376 0.562067 2.52893C0.146889 3.3041 -0.0445907 4.17803 0.00874117 5.05437C0.0620731 5.93071 0.358145 6.77541 0.864309 7.49531L4.72504 12.9628C4.7336 12.9741 4.74465 12.9833 4.75735 12.9898C4.77005 12.9963 4.78407 12.9997 4.79834 13C4.81262 12.9999 4.82669 12.9964 4.83941 12.99C4.85213 12.9835 4.86316 12.9742 4.87163 12.9628L8.66077 7.60192C8.67092 7.58692 8.67627 7.56922 8.67611 7.55115C8.67627 7.53123 8.66961 7.51184 8.65722 7.49617C8.64484 7.48049 8.62746 7.46945 8.60793 7.46485"
+                                fill="#FABC26" />
+                            </svg>
+                          </div>
+                          Укрпочта
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="forwarding" id="forwarding6" onchange="changeForwarding(this)">
+                        <label class="taskPopup-create-radio-type-label" for="forwarding6">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path
+                                  d="M1.6543 9.90826V10.6558C1.6543 10.8459 1.80838 11 1.99855 11H3.75465C3.94473 11 4.0989 10.8459 4.0989 10.6558V9.90826H1.6543Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M6.9209 9.90826V10.6558C6.9209 10.8459 7.07498 11 7.26515 11H9.02125C9.21133 11 9.3655 10.8459 9.3655 10.6558V9.90826H6.9209Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M1.6543 6.60553V9.21983H9.36501V6.60553H1.6543ZM6.17516 7.79791H4.84414C4.65405 7.79791 4.49989 7.64383 4.49989 7.45366C4.49989 7.26357 4.65405 7.10949 4.84414 7.10949H6.17516C6.36525 7.10949 6.51942 7.26357 6.51942 7.45366C6.51942 7.64383 6.36525 7.79791 6.17516 7.79791Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M9.36501 5.91703V3.30273H1.6543V5.91703H9.36501ZM4.84414 3.80669H6.17516C6.36525 3.80669 6.51942 3.96086 6.51942 4.15095C6.51942 4.34103 6.36525 4.4952 6.17516 4.4952H4.84414C4.65405 4.4952 4.49989 4.34103 4.49989 4.15095C4.49989 3.96086 4.65405 3.80669 4.84414 3.80669Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M9.36501 2.6143V0.344254C9.36501 0.154083 9.21092 0 9.02075 0H1.99855C1.80838 0 1.6543 0.154083 1.6543 0.344254V2.6143H9.36501ZM6.17516 1.19238H4.84414C4.65405 1.19238 4.49989 1.0383 4.49989 0.848213C4.49989 0.658043 4.65405 0.50396 4.84414 0.50396H6.17516C6.36525 0.50396 6.51942 0.658043 6.51942 0.848213C6.51942 1.0383 6.36525 1.19238 6.17516 1.19238Z"
+                                  fill="#005FB1" />
+                              </g>
+                            </svg>
+                          </div>
+                          АПТ
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="forwarding" id="forwarding7" onchange="changeForwarding(this)">
+                        <label class="taskPopup-create-radio-type-label" for="forwarding7">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="12" viewBox="0 0 9 12" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.6339 6.30809C7.74011 8.04863 6.83286 9.77674 5.91217 11.4924C5.87548 11.5636 5.82489 11.6259 5.76367 11.6754C5.70246 11.7248 5.63199 11.7603 5.55683 11.7794C4.65993 11.8054 3.76148 11.794 2.78079 11.794C2.88166 11.5816 2.94838 11.4292 3.02442 11.2832C3.87166 9.6616 4.71424 8.03998 5.57545 6.4362C5.6547 6.3142 5.69707 6.17014 5.69707 6.02268C5.69707 5.87523 5.6547 5.73117 5.57545 5.60917C4.69097 3.9762 3.83131 2.32863 2.967 0.684306C2.90338 0.564306 2.85683 0.436198 2.77148 0.243225C3.74442 0.243225 4.65528 0.243225 5.56459 0.252955C5.62764 0.267088 5.68703 0.295264 5.73871 0.335562C5.79039 0.37586 5.83315 0.427333 5.86407 0.486468C6.79511 2.2362 7.72614 3.98755 8.63855 5.75025C8.67493 5.83846 8.69331 5.93363 8.6925 6.02968C8.6917 6.12573 8.67174 6.22056 8.6339 6.30809Z"
+                                fill="#E8002C" />
+                              <path
+                                d="M2.61776 7.46917C2.60372 7.52888 2.57523 7.58381 2.53501 7.62868C2.49479 7.67355 2.4442 7.70685 2.3881 7.72539C1.60138 7.74647 0.811552 7.73836 0 7.73836V4.37836H2.62862C2.62862 5.43403 2.63793 6.45241 2.61776 7.46917Z"
+                                fill="#005FB1" />
+                            </svg>
+                          </div>
+                          Meest Point
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="taskPopup-select-block">
+                      <div class="taskPopup-select-block-top">
+                        <div class="taskPopup-select-block-left">
+                          Город:
+                        </div>
+                        <div class="taskPopup-select-block-right">
+                          <a href="javascript:void(0)" class="copy"></a>
+                        </div>
+                      </div>
+                      <select class="taskPopup-select" name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+
+                    <div class="taskPopup-select-block">
+                      <div class="taskPopup-select-block-top">
+                        <div class="taskPopup-select-block-left">
+                          Отделение:
+                        </div>
+                        <div class="taskPopup-select-block-right">
+                          <a href="javascript:void(0);" class="copy"></a>
+                        </div>
+                      </div>
+                      <select class="taskPopup-select" name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+
+                    <div class="taskPopup-row fields-forwarding">
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              № дома:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              № квартиры:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <textarea name="text" id="forwarding-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="forwarding-2">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="forwarding-2">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, когда службе доставки необходимо передать
+                      уточнение номера телефона получателя или адреса для доставки посылки
+                      (например, когда получатель при оформлении заказа ввел неправильные
+                      дание).
+                      Для создания задачи нужно выбрать подтип задачи.
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="postponement">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Перенос даты доставки
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <div class="taskPopup-create-calendar">
+                      <div class="taskPopup-create-calendar-title">
+                        Перенести дату доставки на:
+                      </div>
+                      <div class="taskPopup-create-calendar-item">
+                        <input type="text" class="daterange-input-2" />
+                      </div>
+                    </div>
+
+                    <textarea name="text" id="postponement-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="postponement-2">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="postponement-2">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, когда получатель посылки пожелал перенести
+                      дату доставки на указанное им время. Желаемую дату доставки посылки
+                      необходимо выбрать с помощью календаря. Доступные даты в календаре
+                      автоматически ограничены согласно условиям службы доставки Meest
+                      Express, и
+                      можно выбрать только дату в рамках этих ограничений. Обучающий ролик к
+                      задаче можно посмотреть здесь:
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="reDelivery">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Повторная доставка
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <div class="taskPopup-create-radio-type">
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="reDelivery" id="reDelivery3" checked>
+                        <label class="taskPopup-create-radio-type-label" for="reDelivery3">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.89575 9.62979L8.10358 6.73154C8.08577 6.66637 8.04598 6.60934 7.99094 6.57014C6.73526 5.6759 7.14688 5.96902 6.07342 5.20461C6.48088 4.7859 6.71577 4.21984 6.71577 3.6273C6.71577 2.44605 6.72362 2.38141 6.68899 2.1659C6.6762 0.929336 5.73899 0 4.49868 0H4.40758C3.16729 0 2.23008 0.929336 2.21729 2.16592C2.18266 2.38143 2.19051 2.44602 2.19051 3.62732C2.19051 4.21982 2.4254 4.78588 2.83288 5.20463C1.47444 6.17197 2.26819 5.60672 0.915336 6.57016C0.860297 6.60936 0.820492 6.66639 0.80268 6.73156L0.0105119 9.6298C-0.0404061 9.81611 0.100082 10 0.29311 10H4.16018V6.90396L4.45315 6.71148L4.74612 6.90396V10H8.61319C8.80631 10 8.94665 9.81596 8.89575 9.62979ZM4.26182 0.949258H4.64446C4.80625 0.949258 4.93743 1.08043 4.93743 1.24223C4.93743 1.40402 4.80625 1.5352 4.64446 1.5352H4.26182C4.10002 1.5352 3.96885 1.40402 3.96885 1.24223C3.96885 1.08043 4.10002 0.949258 4.26182 0.949258ZM4.1602 6.20287L3.51577 6.62629L2.65614 6.0498L3.31438 5.58105C3.58344 5.73799 3.87407 5.83187 4.1602 5.86871V6.20287ZM4.45315 5.30156C3.52258 5.30156 2.77645 4.54635 2.77645 3.62732C2.77643 3.41752 2.7762 3.24389 2.776 3.0985L2.9335 3.32844C2.98811 3.40818 3.07854 3.45584 3.1752 3.45584H5.73108C5.82772 3.45584 5.91815 3.40818 5.97278 3.32844L6.13028 3.0985C6.13008 3.24387 6.12985 3.41752 6.12985 3.62732C6.12985 4.53813 5.392 5.30156 4.45315 5.30156ZM4.7461 6.20287V5.86869C5.04747 5.82994 5.33579 5.73045 5.5919 5.58104L6.25014 6.04979L5.39051 6.62627L4.7461 6.20287ZM6.94196 8.75182H5.91465C5.75286 8.75182 5.62168 8.62064 5.62168 8.45885C5.62168 8.29705 5.75286 8.16588 5.91465 8.16588H6.94196C7.10375 8.16588 7.23493 8.29705 7.23493 8.45885C7.23493 8.62064 7.10375 8.75182 6.94196 8.75182Z"
+                                fill="#5081E9" />
+                            </svg>
+                          </div>
+                          Курьер
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="reDelivery" id="reDelivery4">
+                        <label class="taskPopup-create-radio-type-label" for="reDelivery4">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path
+                                  d="M0.168753 7.23046C-0.054104 6.99997 -0.0557923 6.86339 0.168753 6.64144C0.909922 5.87827 1.66291 5.12193 2.41421 4.36217C2.47668 4.30071 2.53914 4.20168 2.63369 4.23753C2.72823 4.27339 2.70797 4.40827 2.70797 4.50388C2.70797 5.3268 2.70797 6.14973 2.70797 6.97436C2.70797 7.799 2.70797 8.57924 2.70797 9.38168C2.70797 9.46534 2.7468 9.57802 2.64213 9.62241C2.53745 9.6668 2.4733 9.56949 2.42096 9.50802C1.67023 8.74656 0.919489 7.98737 0.168753 7.23046Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M6.2623 13.3905C5.49581 12.6188 4.73044 11.8454 3.9662 11.0702C3.91048 11.0139 3.83113 10.9558 3.87503 10.8688C3.91893 10.7817 4.00841 10.7937 4.08776 10.7937H4.95217C5.00309 10.8002 5.05483 10.795 5.10344 10.7783C5.15206 10.7617 5.19628 10.734 5.23275 10.6975C5.26921 10.6609 5.29695 10.6165 5.31386 10.5675C5.33078 10.5184 5.33642 10.4662 5.33035 10.4146C5.33035 10.1227 5.33035 9.83243 5.33035 9.54048C5.33035 9.24853 5.33035 8.95829 5.33035 8.66804C5.33035 8.3778 5.44009 8.24463 5.73724 8.24292C6.27243 8.24292 6.80932 8.24292 7.34451 8.24292C7.64334 8.24292 7.74802 8.35219 7.74971 8.66804C7.74971 9.23999 7.74971 9.81194 7.74971 10.3839C7.74971 10.7117 7.83412 10.7937 8.15659 10.7988C8.4149 10.7988 8.67321 10.7988 8.93152 10.7988C9.01087 10.7988 9.10035 10.7988 9.14425 10.8722C9.18815 10.9456 9.11048 11.019 9.05477 11.0754C8.2894 11.8493 7.52403 12.6228 6.75867 13.3956C6.72804 13.4322 6.68981 13.4615 6.64671 13.4814C6.60361 13.5013 6.55669 13.5114 6.50929 13.5109C6.4619 13.5105 6.4152 13.4994 6.37251 13.4786C6.32982 13.4578 6.29219 13.4277 6.2623 13.3905Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M3.82367 3.06125C3.77471 2.9571 3.86419 2.89052 3.92497 2.83417L6.01172 0.725638C6.13924 0.57584 6.28837 0.446336 6.45406 0.341492C6.45904 0.366107 6.45654 0.391668 6.4469 0.414823C6.43726 0.437978 6.42092 0.457646 6.40004 0.471248C5.60822 1.15417 4.91432 1.95149 4.16302 2.69076C4.12757 2.72491 4.09043 2.76076 4.05835 2.79832C4.02627 2.83588 3.93848 2.90076 3.96549 2.96905C3.9925 3.03734 4.10224 3.03393 4.17653 3.03564C4.37406 3.03564 4.57328 3.03564 4.7725 3.03564C5.2638 3.03564 5.39549 3.17222 5.40055 3.66052C5.40055 4.12149 5.40055 4.58417 5.40055 5.04686C5.40055 5.38832 5.50692 5.49759 5.84796 5.50442C6.31562 5.51296 6.78328 5.51466 7.24926 5.50442C7.5751 5.50442 7.67471 5.39174 7.67978 5.06052C7.68991 4.59954 7.67978 4.13686 7.67978 3.67417C7.67978 3.16198 7.81315 3.04076 8.32302 3.03564C8.50198 3.03564 8.68094 3.03564 8.85991 3.03564C8.92575 3.03564 9.01354 3.05613 9.04393 2.97417C9.07432 2.89222 9.00341 2.84442 8.95614 2.80344C8.61848 2.46198 8.28081 2.12052 7.94315 1.77905C7.50081 1.34539 7.099 0.875882 6.61614 0.479784C6.59504 0.464618 6.57935 0.442951 6.57144 0.418022C6.56353 0.393094 6.56381 0.366245 6.57224 0.341492C6.70423 0.421612 6.8223 0.523128 6.92172 0.641979C7.63307 1.35905 8.34216 2.07613 9.049 2.7932C9.12159 2.86661 9.25328 2.9332 9.18913 3.06295C9.12497 3.19271 9.01017 3.11588 8.91731 3.1193C8.659 3.1193 8.40068 3.1193 8.14237 3.1193C8.08778 3.11012 8.03182 3.11424 7.97912 3.13133C7.92643 3.14842 7.87853 3.17797 7.8394 3.21755C7.80027 3.25712 7.77104 3.30556 7.75414 3.35884C7.73725 3.41213 7.73317 3.46873 7.74224 3.52393C7.74224 4.05661 7.74224 4.5893 7.74224 5.12198C7.74224 5.48222 7.63757 5.58125 7.27627 5.58295C6.76978 5.58295 6.26328 5.58295 5.75679 5.58295C5.43601 5.58295 5.32458 5.47369 5.3212 5.15271C5.3212 4.62174 5.3212 4.08905 5.3212 3.55637C5.3212 3.23027 5.21822 3.12613 4.89575 3.12271C4.60705 3.12271 4.32004 3.12271 4.03133 3.12271C3.9638 3.1193 3.86588 3.15174 3.82367 3.06125Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M10.3717 9.25879C10.3717 8.47513 10.3717 7.69318 10.3717 6.91122C10.3717 6.12927 10.3717 5.34561 10.3717 4.56366C10.3717 4.46976 10.3329 4.3383 10.4477 4.29561C10.5625 4.25293 10.6165 4.37244 10.6874 4.43903C11.4044 5.16179 12.1191 5.88513 12.8316 6.60903C13.0916 6.87537 13.0899 6.99318 12.8231 7.26293C12.1174 7.98 11.4083 8.69594 10.6959 9.41074C10.625 9.48244 10.5608 9.62244 10.4342 9.55927C10.3076 9.4961 10.3717 9.36122 10.3717 9.25879Z"
+                                  fill="#FDFDFD" />
+                                <path
+                                  d="M9.19654 3.06295C9.1442 3.17052 9.01758 3.11588 8.92472 3.1193C8.66641 3.1193 8.4081 3.1193 8.14979 3.1193C8.0952 3.11012 8.03923 3.11424 7.98654 3.13133C7.93384 3.14842 7.88594 3.17797 7.84681 3.21755C7.80768 3.25712 7.77846 3.30556 7.76156 3.35884C7.74466 3.41213 7.74058 3.46873 7.74966 3.52393C7.74966 4.05661 7.74966 4.5893 7.74966 5.12198C7.74966 5.48222 7.64498 5.58125 7.28368 5.58295C6.77719 5.58295 6.2707 5.58295 5.7642 5.58295C5.44342 5.58295 5.332 5.47369 5.32862 5.15271C5.32862 4.62174 5.32862 4.08905 5.32862 3.55637C5.32862 3.23027 5.22563 3.12613 4.90316 3.12271C4.61446 3.12271 4.32745 3.12271 4.03875 3.12271C3.96446 3.12271 3.86992 3.15515 3.82433 3.06466C3.77875 2.97417 3.86485 2.89393 3.92563 2.83759L6.01238 0.725638C6.13991 0.57584 6.28903 0.446336 6.45472 0.341492H6.5729C6.70489 0.421612 6.82296 0.523128 6.92238 0.641979C7.63373 1.35905 8.34282 2.07613 9.04966 2.7932C9.12901 2.86661 9.2607 2.9332 9.19654 3.06295Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M9.05807 11.0702C8.2927 11.8442 7.52733 12.6176 6.76196 13.3905C6.73178 13.4292 6.69331 13.4605 6.64945 13.482C6.60558 13.5035 6.55747 13.5147 6.50871 13.5147C6.45996 13.5147 6.41184 13.5035 6.36798 13.482C6.32412 13.4605 6.28565 13.4292 6.25547 13.3905C5.48897 12.6188 4.72361 11.8454 3.95936 11.0702C3.90365 11.0139 3.8243 10.9558 3.86819 10.8688C3.91209 10.7817 4.00157 10.7937 4.08092 10.7937H4.94534C4.99677 10.8014 5.04928 10.797 5.09877 10.7809C5.14826 10.7647 5.19339 10.7372 5.23065 10.7006C5.2679 10.6639 5.29628 10.619 5.31356 10.5694C5.33084 10.5198 5.33656 10.4668 5.33027 10.4146C5.33027 10.1227 5.33027 9.83243 5.33027 9.54048C5.33027 9.24853 5.33027 8.95829 5.33027 8.66804C5.33027 8.3778 5.44001 8.24463 5.73716 8.24292C6.27235 8.24292 6.80923 8.24292 7.34443 8.24292C7.64326 8.24292 7.74794 8.35219 7.74962 8.66804C7.74962 9.23999 7.74962 9.81194 7.74962 10.3839C7.74962 10.7117 7.83404 10.7937 8.15651 10.7988C8.41482 10.7988 8.67313 10.7988 8.93144 10.7988C9.01079 10.7988 9.10027 10.7988 9.14417 10.8722C9.18807 10.9456 9.11716 11.0139 9.05807 11.0702Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M2.70122 9.39022C2.70122 9.47388 2.74005 9.58656 2.63538 9.63095C2.5307 9.67534 2.46655 9.57802 2.41421 9.51656C1.66797 8.74941 0.919489 7.98737 0.168753 7.23046C-0.054104 6.99997 -0.0557923 6.86339 0.168753 6.64144C0.909922 5.87827 1.66291 5.12193 2.41421 4.36217C2.47668 4.30071 2.53914 4.20168 2.63369 4.23753C2.72823 4.27339 2.70797 4.40827 2.70797 4.50388C2.70797 5.3268 2.70797 6.14973 2.70797 6.97436C2.70797 7.799 2.71135 8.57924 2.70122 9.39022Z"
+                                  fill="#EE1616" />
+                                <path
+                                  d="M12.8308 7.26293C12.1251 7.98 11.416 8.69594 10.7036 9.41074C10.6326 9.48244 10.5685 9.62244 10.4419 9.55927C10.3152 9.4961 10.3777 9.36122 10.3777 9.25879C10.3777 8.47513 10.3777 7.69318 10.3777 6.91122C10.3777 6.12927 10.3777 5.34561 10.3777 4.56366C10.3777 4.46976 10.3389 4.3383 10.4537 4.29561C10.5685 4.25293 10.6225 4.37244 10.6934 4.43903C11.4059 5.16179 12.1184 5.88513 12.8308 6.60903C13.0925 6.87537 13.0908 7 12.8308 7.26293Z"
+                                  fill="#EE1616" />
+                              </g>
+                            </svg>
+                          </div>
+                          Нова почта
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="reDelivery" id="reDelivery5">
+                        <label class="taskPopup-create-radio-type-label" for="reDelivery5">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.60964 7.46485L4.26823 6.48846C3.72623 6.36665 3.24356 6.06202 2.90246 5.62648C2.56137 5.19094 2.38296 4.65145 2.39766 4.09996C2.41235 3.54846 2.61924 3.01908 2.98305 2.60206C3.34686 2.18503 3.84509 1.90616 4.39281 1.81297C4.94054 1.71978 5.50387 1.81805 5.98679 2.09102C6.46971 2.36398 6.84234 2.79476 7.04116 3.30993C7.23999 3.8251 7.25271 4.39278 7.07716 4.91622C6.90161 5.43966 6.54864 5.88646 6.07843 6.18048C6.06886 6.18699 6.06141 6.19613 6.05699 6.20677C6.05257 6.21742 6.05137 6.22911 6.05354 6.24043C6.05571 6.25174 6.06115 6.26218 6.06921 6.27046C6.07726 6.27875 6.08757 6.28453 6.09888 6.28709L8.0301 6.72029C8.0524 6.72523 8.07566 6.72371 8.09711 6.71591C8.11856 6.70811 8.13731 6.69436 8.15112 6.67629C8.60931 6.07421 8.89434 5.35998 8.9758 4.60973C9.05727 3.85948 8.93213 3.10135 8.61372 2.41616C8.29531 1.73097 7.79556 1.14441 7.16777 0.719007C6.53997 0.293607 5.80766 0.0453177 5.0489 0.000610292H4.87845C3.99423 -0.0134357 3.12328 0.215214 2.36163 0.661346C1.59999 1.10748 0.977244 1.75376 0.562067 2.52893C0.146889 3.3041 -0.0445907 4.17803 0.00874117 5.05437C0.0620731 5.93071 0.358145 6.77541 0.864309 7.49531L4.72504 12.9628C4.7336 12.9741 4.74465 12.9833 4.75735 12.9898C4.77005 12.9963 4.78407 12.9997 4.79834 13C4.81262 12.9999 4.82669 12.9964 4.83941 12.99C4.85213 12.9835 4.86316 12.9742 4.87163 12.9628L8.66077 7.60192C8.67092 7.58692 8.67627 7.56922 8.67611 7.55115C8.67627 7.53123 8.66961 7.51184 8.65722 7.49617C8.64484 7.48049 8.62746 7.46945 8.60793 7.46485"
+                                fill="#FABC26" />
+                            </svg>
+                          </div>
+                          Укрпочта
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="reDelivery" id="reDelivery6">
+                        <label class="taskPopup-create-radio-type-label" for="reDelivery6">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path
+                                  d="M1.6543 9.90826V10.6558C1.6543 10.8459 1.80838 11 1.99855 11H3.75465C3.94473 11 4.0989 10.8459 4.0989 10.6558V9.90826H1.6543Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M6.9209 9.90826V10.6558C6.9209 10.8459 7.07498 11 7.26515 11H9.02125C9.21133 11 9.3655 10.8459 9.3655 10.6558V9.90826H6.9209Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M1.6543 6.60553V9.21983H9.36501V6.60553H1.6543ZM6.17516 7.79791H4.84414C4.65405 7.79791 4.49989 7.64383 4.49989 7.45366C4.49989 7.26357 4.65405 7.10949 4.84414 7.10949H6.17516C6.36525 7.10949 6.51942 7.26357 6.51942 7.45366C6.51942 7.64383 6.36525 7.79791 6.17516 7.79791Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M9.36501 5.91703V3.30273H1.6543V5.91703H9.36501ZM4.84414 3.80669H6.17516C6.36525 3.80669 6.51942 3.96086 6.51942 4.15095C6.51942 4.34103 6.36525 4.4952 6.17516 4.4952H4.84414C4.65405 4.4952 4.49989 4.34103 4.49989 4.15095C4.49989 3.96086 4.65405 3.80669 4.84414 3.80669Z"
+                                  fill="#E8002C" />
+                                <path
+                                  d="M9.36501 2.6143V0.344254C9.36501 0.154083 9.21092 0 9.02075 0H1.99855C1.80838 0 1.6543 0.154083 1.6543 0.344254V2.6143H9.36501ZM6.17516 1.19238H4.84414C4.65405 1.19238 4.49989 1.0383 4.49989 0.848213C4.49989 0.658043 4.65405 0.50396 4.84414 0.50396H6.17516C6.36525 0.50396 6.51942 0.658043 6.51942 0.848213C6.51942 1.0383 6.36525 1.19238 6.17516 1.19238Z"
+                                  fill="#005FB1" />
+                              </g>
+                            </svg>
+                          </div>
+                          АПТ
+                        </label>
+                      </div>
+
+                      <div class="taskPopup-create-radio-type-item">
+                        <input type="radio" name="reDelivery" id="reDelivery7">
+                        <label class="taskPopup-create-radio-type-label" for="reDelivery7">
+                          <div class="taskPopup-create-radio-type-ico">
+                            <svg width="9" height="12" viewBox="0 0 9 12" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.6339 6.30809C7.74011 8.04863 6.83286 9.77674 5.91217 11.4924C5.87548 11.5636 5.82489 11.6259 5.76367 11.6754C5.70246 11.7248 5.63199 11.7603 5.55683 11.7794C4.65993 11.8054 3.76148 11.794 2.78079 11.794C2.88166 11.5816 2.94838 11.4292 3.02442 11.2832C3.87166 9.6616 4.71424 8.03998 5.57545 6.4362C5.6547 6.3142 5.69707 6.17014 5.69707 6.02268C5.69707 5.87523 5.6547 5.73117 5.57545 5.60917C4.69097 3.9762 3.83131 2.32863 2.967 0.684306C2.90338 0.564306 2.85683 0.436198 2.77148 0.243225C3.74442 0.243225 4.65528 0.243225 5.56459 0.252955C5.62764 0.267088 5.68703 0.295264 5.73871 0.335562C5.79039 0.37586 5.83315 0.427333 5.86407 0.486468C6.79511 2.2362 7.72614 3.98755 8.63855 5.75025C8.67493 5.83846 8.69331 5.93363 8.6925 6.02968C8.6917 6.12573 8.67174 6.22056 8.6339 6.30809Z"
+                                fill="#E8002C" />
+                              <path
+                                d="M2.61776 7.46917C2.60372 7.52888 2.57523 7.58381 2.53501 7.62868C2.49479 7.67355 2.4442 7.70685 2.3881 7.72539C1.60138 7.74647 0.811552 7.73836 0 7.73836V4.37836H2.62862C2.62862 5.43403 2.63793 6.45241 2.61776 7.46917Z"
+                                fill="#005FB1" />
+                            </svg>
+                          </div>
+                          Meest Point
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="taskPopup-select-block">
+                      <div class="taskPopup-select-block-top">
+                        <div class="taskPopup-select-block-left">
+                          Город:
+                        </div>
+                        <div class="taskPopup-select-block-right">
+                          <a href="javascript:void(0)" class="copy"></a>
+                        </div>
+                      </div>
+                      <select class="taskPopup-select" name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+
+                    <div class="taskPopup-select-block">
+                      <div class="taskPopup-select-block-top">
+                        <div class="taskPopup-select-block-left">
+                          Отделение:
+                        </div>
+                        <div class="taskPopup-select-block-right">
+                          <a href="javascript:void(0);" class="copy"></a>
+                        </div>
+                      </div>
+                      <select class="taskPopup-select" name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+
+                    <textarea name="text" id="reDelivery-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="reDelivery-2">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="reDelivery-2">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, если получатель не забрал/не получил
+                      посылку,
+                      и она была отправлена в обратном направлении, но клиент передумал и
+                      пожелал
+                      получить посылку. Система автоматически определяет, есть ли еще
+                      возможность
+                      вернуть посылку на повторную доставку. К посылке необходимо прописать
+                      новый
+                      адрес доставки. Если посылка прежде доставлялась на отделение Новой
+                      Почты -
+                      повторную доставку можно оформить только на отделение Новой Почты.
+                      Обучающий
+                      ролик к задаче можно посмотреть здесь:
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="refund">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Повторная доставка
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <div class="taskPopup-row">
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              Номер карты:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              ФИО получателя:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              Сума к возврату:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="taskPopup-col taskPopup-col-50">
+                        <div class="taskPopup-select-block">
+                          <div class="taskPopup-select-block-top">
+                            <div class="taskPopup-select-block-left">
+                              Номер возврата:
+                            </div>
+                          </div>
+                          <div class="taskPopup-select-block-input">
+                            <input type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <textarea name="text" id="refund-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-files">
+                      <div class="taskPopup-create-files-title">
+                        Файлы
+                      </div>
+                      <div class="taskPopup-create-files-block" style="height: 65px;">
+
+                      </div>
+
+                      <div class="taskPopup-create-files-type">
+                        Поддерживаемые форматы файлов: jpeg,png,pdf
+                      </div>
+
+                    </div>
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="refund-2">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="refund-2">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, когда необходимо к посылке оформить
+                      претензию
+                      в связи с ее повреждением в процессе доставки. Например: поступила
+                      жалоба от
+                      получателя после факта доставки посылки. Желательно дописать к задаче
+                      сообщение (конкретизацию случая) и добавить(прикрепить) фотографии
+                      повреждённой посылки.
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="freetask">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Свободная задача
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <textarea name="text" id="freetask-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-files">
+                      <div class="taskPopup-create-files-title">
+                        Файлы
+                      </div>
+                      <div class="taskPopup-create-files-block" style="height: 65px;">
+
+                      </div>
+
+                      <div class="taskPopup-create-files-type">
+                        Поддерживаемые форматы файлов: jpeg,png,pdf
+                      </div>
+
+                    </div>
+
+                    <div class="taskPopup-create-task-radio">
+                      <label class="taskPopup-create-task-radio-label" for="freetask-2">
+                        <span>Приоритет</span>
+                        <input class="taskPopup-create-task-radio-input" type="checkbox" id="freetask-2">
+                        <span class="taskPopup-create-task-radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="taskPopup-create-task-txt">
+                      Задача используется в случае, когда необходимо к посылке оформить
+                      претензию
+                      в связи с ее повреждением в процессе доставки. Например: поступила
+                      жалоба от
+                      получателя после факта доставки посылки. Желательно дописать к задаче
+                      сообщение (конкретизацию случая) и добавить(прикрепить) фотографии
+                      повреждённой посылки.
+                    </div>
+
+                    <div class="taskPopup-create-btns">
+                      <button class="taskPopup-create-btn">
+                        Подтвердить
+                      </button>
+                      <button class="taskPopup-create-btn">
+                        Отменить
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-create-task" data-task="speedDelivery">
+              <div class="taskPopup-create-task-title">
+                <span>
+                  Создать задачу:
+                </span>
+                <span>
+                  Ускорение доставки
+                </span>
+                <div class="taskPopup-create-task-tooltype">
+                  <span class="taskPopup-create-task-tooltype-ico js_popper_task">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.3341 0.750122H5.66512C2.64412 0.750122 0.750122 2.88912 0.750122 5.91612V14.0841C0.750122 17.1111 2.63512 19.2501 5.66512 19.2501H14.3331C17.3641 19.2501 19.2501 17.1111 19.2501 14.0841V5.91612C19.2501 2.88912 17.3641 0.750122 14.3341 0.750122Z"
+                        stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.99475 14.0001V10.0001" stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.98987 6.20435H9.99987" stroke="#130F26" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="taskPopup-create-task-tooltype-text">
+                    Задача используется в случае, если получатель отказался от посылки и посылку необходимо в кратчайшие
+                    сроки вернуть обратно к отправителю. Задача создается нажатием кнопки Подтвердить. Обучающий ролик к
+                    задаче можно посмотреть здесь
+                  </span>
+                </div>
+              </div>
+              <div class="taskPopup-create-task-content">
+                <div class="taskPopup-create-task-form">
+                  <form action="">
+
+                    <textarea name="text" id="speedDelivery-1"
+                      placeholder="Ваше сообщение сотруднику службы доставки..."></textarea>
+
+                    <div class="taskPopup-create-task-form-bottom">
+                      <div class="taskPopup-create-task-radio">
+                        <label class="taskPopup-create-task-radio-label" for="delivery">
+                          <span>Высокий приоритет</span>
+                          <input class="taskPopup-create-task-radio-input" type="checkbox" id="delivery">
+                          <span class="taskPopup-create-task-radio-span"></span>
+                        </label>
+                      </div>
+                      <div class="taskPopup-create-btns">
+                        <button class="taskPopup-create-btn">
+                          Создать задачу
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="taskPopup-right">
+          <div class="taskPopup-top-actions">
+            <a href="javascript:void(0)" class="taskPopup-top-action" onclick="changeOptionType(this, 'create')">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.7004 20.004H5.40044C4.00044 20.104 2.50044 19.604 1.50044 18.604C0.500443 17.504 0.000449225 16.104 0.100449 14.704V5.40399C0.000449225 4.00399 0.500443 2.50399 1.50044 1.50399C2.60044 0.503991 4.00044 0.00398912 5.40044 0.103989H14.7004C16.1004 0.00398912 17.6004 0.503991 18.6004 1.50399C19.6004 2.60399 20.1004 4.00399 20.0004 5.40399V14.704C20.0004 18.104 18.1004 20.004 14.7004 20.004ZM6.30045 9.20399C5.80045 9.20399 5.50044 9.60399 5.50044 10.004C5.50044 10.504 5.90045 10.804 6.30045 10.804H9.10045V13.604C9.10045 14.104 9.50044 14.404 9.90044 14.404C10.3004 14.404 10.7004 14.004 10.7004 13.604V10.804H13.5004C14.0004 10.804 14.3004 10.404 14.3004 9.90399C14.3004 9.50399 13.9004 9.10399 13.5004 9.10399H10.7004V6.30399C10.7004 5.80399 10.3004 5.50399 9.90044 5.50399C9.40044 5.50399 9.10045 5.90399 9.10045 6.30399V9.10399H6.30045V9.20399Z"
+                  fill="#5081E9" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="taskPopup-top-action" onclick="changeOptionType(this)">
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.9004 19.004H6.0004C3.2004 19.004 0.900391 16.704 0.900391 13.904V6.00399C0.900391 3.20399 3.2004 1.00399 6.0004 0.903992H15.9004C17.2004 0.903992 18.5004 1.40399 19.5004 2.40399C20.5004 3.30399 21.0004 4.60399 21.0004 6.00399V13.904C21.0004 16.704 18.7004 19.004 15.9004 19.004ZM5.0004 6.20399C4.8004 6.20399 4.6004 6.30399 4.5004 6.40399C4.2004 6.70399 4.20039 7.10399 4.40039 7.40399L4.5004 7.50399L9.1004 11.104C9.7004 11.504 10.3004 11.804 11.0004 11.804C11.7004 11.804 12.4004 11.604 13.0004 11.104L17.5004 7.50399L17.6004 7.40399C17.8004 7.10399 17.8004 6.70399 17.6004 6.40399C17.5004 6.30399 17.3004 6.20399 17.1004 6.10399C16.9004 6.10399 16.7004 6.20399 16.6004 6.30399L12.1004 9.90399C11.8004 10.104 11.5004 10.304 11.1004 10.304C10.7004 10.304 10.4004 10.204 10.1004 9.90399L5.6004 6.30399C5.4004 6.30399 5.2004 6.20399 5.0004 6.20399Z"
+                  fill="#5081E9" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="taskPopup-top-action" onclick="changeOptionType(this)">
+              <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 16.604C0 13.904 3.7 13.204 8 13.204C12.3 13.204 16 13.904 16 16.604C16 19.304 12.3 20.004 8 20.004C3.7 20.004 0 19.304 0 16.604ZM2.70001 5.30402C2.70001 2.40402 5.1 0.00402832 8 0.00402832C10.9 0.00402832 13.3 2.40402 13.3 5.30402C13.3 8.20402 10.9 10.604 8 10.604C5.1 10.604 2.70001 8.20402 2.70001 5.30402Z"
+                  fill="#5081E9" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="taskPopup-top-action" onclick="changeOptionType(this)">
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.70001 20.004C2.10001 20.004 0 17.904 0 15.304V4.50403C0 2.00403 2 0.00402832 4.5 0.00402832H9.79999C10.1 0.00402832 10.3 0.204028 10.3 0.504028V3.70403C10.3 5.50403 11.8 7.00403 13.6 7.00403C14 7.00403 14.4 7.00403 14.7 7.00403C15 7.00403 15.2 7.00403 15.4 7.00403C15.5 7.00403 15.7 7.00403 15.9 7.00403C16.1 7.00403 16.4 7.00403 16.6 7.00403C16.8 7.00403 17 7.20403 17 7.40403V15.404C17 17.904 15 19.904 12.5 19.904H4.70001V20.004ZM5.09998 11.004C5.09998 11.404 5.39999 11.704 5.79999 11.704H7.5V13.404C7.5 13.804 7.80001 14.104 8.20001 14.204C8.60001 14.204 8.9 13.904 9 13.504C9 13.504 9 13.504 9 13.404V11.704H10.7C11.1 11.704 11.4 11.404 11.4 11.004C11.4 10.604 11.1 10.304 10.7 10.304H9V8.60403C9 8.20403 8.69999 7.90403 8.29999 7.80403C7.89999 7.80403 7.6 8.10403 7.5 8.50403C7.5 8.50403 7.5 8.50403 7.5 8.60403V10.304H5.79999C5.49999 10.204 5.09998 10.604 5.09998 11.004ZM13.6 5.60403C12.5 5.60403 11.6 4.70403 11.6 3.60403V0.90403C11.6 0.60403 11.8 0.40403 12.1 0.40403C12.2 0.40403 12.4 0.504028 12.5 0.504028L16.5 4.70403C16.7 4.90403 16.7 5.20403 16.5 5.40403C16.4 5.50403 16.3 5.50403 16.2 5.50403H15.6C14.8 5.60403 14.2 5.60403 13.6 5.60403Z"
+                  fill="#5081E9" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="taskPopup-top-action" onclick="changeOptionType(this)">
+              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.2004 20.004H5.90043C4.00043 20.004 2.70043 19.604 1.90043 18.704C1.10043 17.804 0.800444 16.304 1.10044 14.404L1.90043 8.20402C2.00043 7.30402 2.40044 6.40402 3.10044 5.80402C3.60044 5.30402 4.30044 5.10401 5.00044 5.10401H5.10044C5.10044 5.00401 5.10044 4.90402 5.10044 4.90402C5.20044 2.10402 7.50043 0.00401284 10.3004 0.104013C12.9004 0.204013 15.0004 2.30402 15.1004 4.90402C15.1004 5.00402 15.1004 5.10401 15.1004 5.10401H15.3004C16.0004 5.10401 16.6004 5.40402 17.1004 5.80402C17.7004 6.40402 18.2004 7.30402 18.3004 8.20402L19.1004 14.404C19.4004 15.904 19.1004 17.404 18.2004 18.604C17.0004 19.604 15.6004 20.104 14.2004 20.004ZM12.9004 8.30402C12.4004 8.30402 12.0004 8.70402 12.0004 9.20402C12.0004 9.70402 12.4004 10.104 12.9004 10.104C13.4004 10.104 13.8004 9.70402 13.8004 9.20402C13.8004 8.80402 13.4004 8.30402 12.9004 8.30402ZM7.10044 8.30402C6.60044 8.30402 6.20045 8.70402 6.20045 9.20402C6.20045 9.70402 6.60044 10.104 7.10044 10.104C7.60044 10.104 8.00044 9.70402 8.00044 9.20402C8.00044 8.80402 7.60044 8.30402 7.10044 8.30402ZM10.0004 1.30402C8.10044 1.30402 6.50044 2.90402 6.50044 4.80402C6.50044 4.90402 6.50044 5.00401 6.50044 5.00401H13.5004C13.5004 4.90401 13.5004 4.90402 13.5004 4.80402C13.4004 2.90402 11.9004 1.30402 10.0004 1.30402Z"
+                  fill="#5081E9" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" class="taskPopup-top-action" onclick="changeOptionType(this, 'comments')">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0 10.015C0 4.74712 4.21 0 10.02 0C15.7 0 20 4.65699 20 9.98498C20 16.1642 14.96 20 10 20C8.36 20 6.54 19.5593 5.08 18.698C4.57 18.3876 4.14 18.1572 3.59 18.3375L1.57 18.9384C1.06 19.0986 0.6 18.698 0.75 18.1572L1.42 15.9139C1.53 15.6034 1.51 15.2729 1.35 15.0125C0.49 13.4301 0 11.6975 0 10.015ZM8.7 10.015C8.7 10.7261 9.27 11.2969 9.98 11.307C10.69 11.307 11.26 10.7261 11.26 10.025C11.26 9.31397 10.69 8.74311 9.98 8.74311C9.28 8.7331 8.7 9.31397 8.7 10.015ZM13.31 10.025C13.31 10.7261 13.88 11.307 14.59 11.307C15.3 11.307 15.87 10.7261 15.87 10.025C15.87 9.31397 15.3 8.74311 14.59 8.74311C13.88 8.74311 13.31 9.31397 13.31 10.025ZM5.37 11.307C4.67 11.307 4.09 10.7261 4.09 10.025C4.09 9.31397 4.66 8.74311 5.37 8.74311C6.08 8.74311 6.65 9.31397 6.65 10.025C6.65 10.7261 6.08 11.2969 5.37 11.307Z"
+                  fill="#5081E9" />
+              </svg>
+              <div class="taskPopup-comments-number">
+                14
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="taskPopup-top-action active" onclick="changeOptionType(this, 'table')">
+              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.10001 18.804V15.704C7.10001 14.904 7.7 14.304 8.5 14.304H11.4C11.8 14.304 12.1 14.404 12.4 14.704C12.7 15.004 12.8 15.304 12.8 15.704V18.804C12.8 19.104 12.9 19.404 13.2 19.704C13.4 19.904 13.7 20.104 14.1 20.104H16.1C17 20.104 17.9 19.704 18.5 19.104C19.1 18.504 19.5 17.604 19.5 16.704V7.90401C19.5 7.20401 19.2 6.50401 18.6 6.00401L11.9 0.70401C10.7 -0.19599 9.1 -0.195992 8 0.804008L1.5 6.00401C0.9 6.50401 0.6 7.20401 0.5 7.90401V16.604C0.5 18.504 2.1 20.004 4 20.004H5.89999C6.49999 20.004 7.10001 19.504 7.10001 18.804Z"
+                  fill="#5081E9" />
+              </svg>
+            </a>
+          </div>
+
+
+
+          <div class="taskPopup-right-wrap">
+
+            <div class="taskPopup-right-inner active" data-right="table">
+              <div class="taskPopup-rigth-item">
+                <div class="taskPopup-rigth-item-name">
+                  Актуальный статус посылки:
+                </div>
+                <div class="taskPopup-status">
+                  <div class="taskPopup-status-title">
+                    Посылка задержана на таможне
+                  </div>
+                  <div class="taskPopup-status-date">
+                    26/10/2020, 13:39
+                  </div>
+                  <div class="taskPopup-warning">
+                    <div class="taskPopup-warning-body js_error_body">
+                      <div class="taskPopup-warning-body-top js_error_top">
+                        <div class="taskPopup-warning-ico">
+                          <svg width="20" height="18" viewBox="0 0 20 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.4773 1.44209L19.746 14.0572C19.906 14.4338 19.976 14.7399 19.996 15.058C20.036 15.8012 19.776 16.5236 19.2661 17.0795C18.7562 17.6334 18.0663 17.9604 17.3164 18H2.6789C2.36896 17.9812 2.05901 17.9108 1.76906 17.8018C0.319302 17.2172 -0.380581 15.5723 0.20932 14.1464L7.52809 1.43317C7.77804 0.986278 8.15798 0.600818 8.6279 0.353094C9.98767 -0.40098 11.7174 0.0944695 12.4773 1.44209ZM10.8675 9.75573C10.8675 10.2314 10.4776 10.6287 9.99767 10.6287C9.51775 10.6287 9.11782 10.2314 9.11782 9.75573V6.95248C9.11782 6.47585 9.51775 6.09039 9.99767 6.09039C10.4776 6.09039 10.8675 6.47585 10.8675 6.95248V9.75573ZM9.99767 14.0176C9.51775 14.0176 9.11782 13.6202 9.11782 13.1456C9.11782 12.669 9.51775 12.2726 9.99767 12.2726C10.4776 12.2726 10.8675 12.6601 10.8675 13.1347C10.8675 13.6202 10.4776 14.0176 9.99767 14.0176Z"
+                              fill="#FEA33D" />
+                          </svg>
+                        </div>
+                        <div class="taskPopup-warning-text-short">
+                          <span>
+                            Посылка была задержана на таможне. Нужна оплата налога. Контактируйте получателя
+                          </span>
+                        </div>
+                        <div class="taskPopup-warning-btn detail-show" onclick="showWarningsDetail(this)">
+                          Подробнее
+                        </div>
+                        <div class="taskPopup-warning-btn detail-hide" onclick="hideWarningsDetail(this)">
+                          Скрыть
+                        </div>
+                      </div>
+                      <div class="taskPopup-warning-text-detail">
+                        tst Выдайте уже курьеру эту посылку, в конце концов.
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="taskPopup-rigth-item">
+                <div class="taskPopup-rigth-item-name">
+                  Ошибки посылки:
+                </div>
+                <div class="taskPopup-error">
+                  <div class="taskPopup-error-body js_error_body">
+                    <div class="taskPopup-error-body-top js_error_top">
+                      <div class="taskPopup-error-ico">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 9.99927C0 4.48027 4.48 -0.000732422 10 -0.000732422C15.53 -0.000732422 20 4.48027 20 9.99927C20 15.5203 15.53 19.9993 10 19.9993C4.48 19.9993 0 15.5203 0 9.99927ZM9.12 6.20927C9.12 5.73027 9.52 5.32927 10 5.32927C10.48 5.32927 10.87 5.73027 10.87 6.20927V10.6293C10.87 11.1103 10.48 11.4993 10 11.4993C9.52 11.4993 9.12 11.1103 9.12 10.6293V6.20927ZM10.01 14.6803C9.52 14.6803 9.13 14.2803 9.13 13.8003C9.13 13.3203 9.52 12.9303 10 12.9303C10.49 12.9303 10.88 13.3203 10.88 13.8003C10.88 14.2803 10.49 14.6803 10.01 14.6803Z"
+                            fill="#F2564F" />
+                        </svg>
+                      </div>
+                      <div class="taskPopup-error-text-short">
+                        <span class="taskPopup-error-text-default">
+                          ОШИБКА 7:
+                        </span>
+                        <span>
+                          Посылка выдана курьеру 3х
+                        </span>
+                      </div>
+                      <div class="taskPopup-error-btn detail-show" onclick="showWarningsDetail(this)">
+                        Подробнее
+                      </div>
+                      <div class="taskPopup-error-btn detail-hide" onclick="hideWarningsDetail(this)">
+                        Скрыть
+                      </div>
+                    </div>
+                    <div class="taskPopup-error-text-detail">
+                      tst Здесь может быть детальное описание ошибки.
+                      В две или три, а может даже четыре и более строки.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="taskPopup-error">
+                  <div class="taskPopup-error-body js_error_body">
+                    <div class="taskPopup-error-body-top js_error_top">
+                      <div class="taskPopup-error-ico">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 9.99927C0 4.48027 4.48 -0.000732422 10 -0.000732422C15.53 -0.000732422 20 4.48027 20 9.99927C20 15.5203 15.53 19.9993 10 19.9993C4.48 19.9993 0 15.5203 0 9.99927ZM9.12 6.20927C9.12 5.73027 9.52 5.32927 10 5.32927C10.48 5.32927 10.87 5.73027 10.87 6.20927V10.6293C10.87 11.1103 10.48 11.4993 10 11.4993C9.52 11.4993 9.12 11.1103 9.12 10.6293V6.20927ZM10.01 14.6803C9.52 14.6803 9.13 14.2803 9.13 13.8003C9.13 13.3203 9.52 12.9303 10 12.9303C10.49 12.9303 10.88 13.3203 10.88 13.8003C10.88 14.2803 10.49 14.6803 10.01 14.6803Z"
+                            fill="#F2564F" />
+                        </svg>
+                      </div>
+                      <div class="taskPopup-error-text-short">
+                        <span class="taskPopup-error-text-default">
+                          ОШИБКА 2:
+                        </span>
+                        <span>
+                          Посылка не была выдана курьеру уже как 2 дня
+                        </span>
+                      </div>
+                      <div class="taskPopup-error-btn detail-show" onclick="showWarningsDetail(this)">
+                        Подробнее
+                      </div>
+                      <div class="taskPopup-error-btn detail-hide" onclick="hideWarningsDetail(this)">
+                        Скрыть
+                      </div>
+                    </div>
+                    <div class="taskPopup-error-text-detail">
+                      Выдайте уже курьеру эту посылку, в конце концов. Здесь может быть детальное описание ошибки. В
+                      две или три, а может даже четыре и более строки. По нажатию на кнопочку Скрыть, блок
+                      превратиться такой, как ошибка выше
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="taskPopup-rigth-item">
+                <div class="taskPopup-rigth-item-name">
+                  Причина отказа от посылки:
+                </div>
+                <div class="taskPopup-failure-text">
+                  Мене не понравилась упаковка. Посылка была помята и крем разлился во внутри. Улучшайте свой
+                  сервис!
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="taskPopup-right-inner" data-right="comments">
+              <div class="taskPopup-comments">
+                <div class="taskPopup-comments-inner">
+                  <div class="taskPopup-comments-form">
+                    <div class="taskPopup-comments-title">
+                      Комментарии
+                    </div>
+                    <form action="">
+                      <textarea onclick="toggleActiveClass(this)" placeholder="Добавить комментарий" name="area"
+                        id="area1"></textarea>
+                      <button class="taskPopup-comments-send">
+                        Отправить
+                      </button>
+                    </form>
+                  </div>
+                  <div class="taskPopup-comments-list">
+                    <div class="taskPopup-comments-items">
+                      <div class="taskPopup-comments-item">
+                        <div class="taskPopup-comments-top">
+                          <div class="taskPopup-comments-name">
+                            Серова Катерина
+                          </div>
+                          <div class="taskPopup-comments-tools">
+                            <svg width="13" height="3" viewBox="0 0 13 3" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="1.5" cy="1.5" r="1.5" fill="#8C8C8C" />
+                              <circle cx="6.5" cy="1.5" r="1.5" fill="#8C8C8C" />
+                              <circle cx="11.5" cy="1.5" r="1.5" fill="#8C8C8C" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="taskPopup-comments-txt">
+                          Нужно уточнить куда отправлять посылку. Диана, сделаешь, плиз ?
+                        </div>
+                        <div class="taskPopup-comments-date">
+                          <span>13.12.21</span>
+                          <span>22:58</span>
+                        </div>
+                      </div>
+                      <div class="taskPopup-comments-item">
+                        <div class="taskPopup-comments-top">
+                          <div class="taskPopup-comments-name">
+                            Мельничук Диана
+                          </div>
+                          <div class="taskPopup-comments-tools">
+                            <svg width="13" height="3" viewBox="0 0 13 3" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="1.5" cy="1.5" r="1.5" fill="#8C8C8C" />
+                              <circle cx="6.5" cy="1.5" r="1.5" fill="#8C8C8C" />
+                              <circle cx="11.5" cy="1.5" r="1.5" fill="#8C8C8C" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="taskPopup-comments-txt">
+                          уточнила! В Житомир
+                        </div>
+                        <div class="taskPopup-comments-date">
+                          <span>13.12.21</span>
+                          <span>22:58</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="taskPopup-right-inner" data-right="create">
+              <div class="taskPopup-create">
+                <div class="taskPopup-create-items">
+                  <div class="taskPopup-create-item active" onclick="changeCreateType(this, 'delivery')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.66976 -0.000793457H14.3398C17.7298 -0.000793457 19.9998 2.37921 19.9998 5.91921V14.0902C19.9998 17.6202 17.7298 19.9992 14.3398 19.9992H5.66976C2.27976 19.9992 -0.000244141 17.6202 -0.000244141 14.0902V5.91921C-0.000244141 2.37921 2.27976 -0.000793457 5.66976 -0.000793457ZM13.0098 12.9992C13.3498 12.6602 13.3498 12.1102 13.0098 11.7702L11.2298 9.99021L13.0098 8.20921C13.3498 7.87021 13.3498 7.31021 13.0098 6.97021C12.6698 6.62921 12.1198 6.62921 11.7698 6.97021L9.99976 8.74921L8.21976 6.97021C7.86976 6.62921 7.31976 6.62921 6.97976 6.97021C6.63976 7.31021 6.63976 7.87021 6.97976 8.20921L8.75976 9.99021L6.97976 11.7602C6.63976 12.1102 6.63976 12.6602 6.97976 12.9992C7.14976 13.1692 7.37976 13.2602 7.59976 13.2602C7.82976 13.2602 8.04976 13.1692 8.21976 12.9992L9.99976 11.2302L11.7798 12.9992C11.9498 13.1802 12.1698 13.2602 12.3898 13.2602C12.6198 13.2602 12.8398 13.1692 13.0098 12.9992Z"
+                        fill="#5081E9" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Отмена доставки</div>
+                  </div>
+                  <!--                                     renewal-->
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'restartTask')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 10.0058C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0058C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0058ZM13.668 11.0178C13.7741 10.9117 13.9093 10.7477 13.9382 10.7091C14.0927 10.5065 14.1699 10.2557 14.1699 10.0058C14.1699 9.72504 14.083 9.46454 13.9189 9.25229C13.9055 9.23885 13.8791 9.21019 13.8448 9.17284C13.7806 9.10296 13.6885 9.00264 13.6004 8.91462C12.8089 8.06561 10.7432 6.67631 9.66216 6.25181C9.49807 6.18524 9.08301 6.03956 8.861 6.02991C8.64865 6.02991 8.44595 6.07815 8.2529 6.17463C8.01158 6.3097 7.81853 6.52195 7.71236 6.77279C7.64479 6.94645 7.53861 7.46744 7.53861 7.47709C7.43243 8.04631 7.37452 8.9725 7.37452 9.99518C7.37452 10.9706 7.43243 11.8572 7.51931 12.4361C7.52169 12.4385 7.53 12.4799 7.5429 12.5442C7.58211 12.7397 7.6638 13.1471 7.75097 13.314C7.96332 13.7192 8.37838 13.9701 8.82239 13.9701H8.861C9.15058 13.9604 9.75869 13.7096 9.75869 13.7C10.7819 13.2754 12.7992 11.9537 13.61 11.0757L13.668 11.0178Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Возобновление доставки</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'claim')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0.00012207 9.99933C0.00012207 4.48033 4.48012 -0.000671387 10.0001 -0.000671387C15.5301 -0.000671387 20.0001 4.48033 20.0001 9.99933C20.0001 15.5203 15.5301 19.9993 10.0001 19.9993C4.48012 19.9993 0.00012207 15.5203 0.00012207 9.99933ZM9.12012 6.20933C9.12012 5.73033 9.52012 5.32933 10.0001 5.32933C10.4801 5.32933 10.8701 5.73033 10.8701 6.20933V10.6293C10.8701 11.1103 10.4801 11.4993 10.0001 11.4993C9.52012 11.4993 9.12012 11.1103 9.12012 10.6293V6.20933ZM10.0101 14.6803C9.52012 14.6803 9.13012 14.2803 9.13012 13.8003C9.13012 13.3203 9.52012 12.9303 10.0001 12.9303C10.4901 12.9303 10.8801 13.3203 10.8801 13.8003C10.8801 14.2803 10.4901 14.6803 10.0101 14.6803Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Претензия</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'complaint')">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.4773 1.44209L19.746 14.0572C19.906 14.4338 19.976 14.7399 19.996 15.058C20.036 15.8012 19.776 16.5236 19.2661 17.0795C18.7562 17.6334 18.0663 17.9604 17.3164 18H2.6789C2.36896 17.9812 2.05901 17.9108 1.76906 17.8018C0.319302 17.2172 -0.380581 15.5723 0.20932 14.1464L7.52809 1.43317C7.77804 0.986278 8.15798 0.600818 8.6279 0.353094C9.98767 -0.40098 11.7174 0.0944695 12.4773 1.44209ZM10.8675 9.75573C10.8675 10.2314 10.4776 10.6287 9.99767 10.6287C9.51775 10.6287 9.11782 10.2314 9.11782 9.75573V6.95248C9.11782 6.47585 9.51775 6.09039 9.99767 6.09039C10.4776 6.09039 10.8675 6.47585 10.8675 6.95248V9.75573ZM9.99767 14.0176C9.51775 14.0176 9.11782 13.6202 9.11782 13.1456C9.11782 12.669 9.51775 12.2726 9.99767 12.2726C10.4776 12.2726 10.8675 12.6601 10.8675 13.1347C10.8675 13.6202 10.4776 14.0176 9.99767 14.0176Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Жалоба</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'extended')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M16.4109 2.76862L16.4119 3.51824C19.1665 3.73413 20.9862 5.61119 20.9891 8.48975L21 16.9155C21.0039 20.054 19.0322 21.985 15.8718 21.99L8.15188 22C5.01119 22.004 3.01482 20.027 3.01087 16.8795L3.00001 8.55272C2.99606 5.65517 4.75153 3.78311 7.50617 3.53024L7.50518 2.78061C7.5042 2.34083 7.83001 2.01 8.26444 2.01C8.69886 2.009 9.02468 2.33883 9.02567 2.77861L9.02666 3.47826L14.8914 3.47027L14.8904 2.77062C14.8894 2.33084 15.2152 2.001 15.6497 2C16.0742 1.999 16.4099 2.32884 16.4109 2.76862ZM4.52148 8.86157L19.4696 8.84158V8.49175C19.4272 6.34283 18.349 5.21539 16.4138 5.04748L16.4148 5.81709C16.4148 6.24688 16.0801 6.5877 15.6556 6.5877C15.2212 6.5887 14.8943 6.24887 14.8943 5.81909L14.8934 5.0095L9.02863 5.01749L9.02962 5.82609C9.02962 6.25687 8.70479 6.5967 8.27036 6.5967C7.83594 6.5977 7.50913 6.25887 7.50913 5.82809L7.50815 5.05847C5.58286 5.25137 4.51753 6.38281 4.52049 8.55072L4.52148 8.86157ZM15.2399 13.4043V13.4153C15.2498 13.8751 15.625 14.2239 16.0801 14.2139C16.5244 14.2029 16.8789 13.8221 16.869 13.3623C16.8483 12.9225 16.4918 12.5637 16.0485 12.5647C15.5944 12.5747 15.2389 12.9445 15.2399 13.4043ZM16.0554 17.892C15.6013 17.882 15.235 17.5032 15.234 17.0435C15.2241 16.5837 15.5884 16.2029 16.0426 16.1919H16.0525C16.5165 16.1919 16.8927 16.5707 16.8927 17.0405C16.8937 17.5102 16.5185 17.891 16.0554 17.892ZM11.1721 13.4203C11.1919 13.8801 11.568 14.2389 12.0222 14.2189C12.4665 14.1979 12.821 13.8181 12.8012 13.3583C12.7903 12.9085 12.425 12.5587 11.9807 12.5597C11.5266 12.5797 11.1711 12.9605 11.1721 13.4203ZM12.0262 17.8471C11.572 17.8671 11.1968 17.5082 11.1761 17.0485C11.1761 16.5887 11.5305 16.2089 11.9847 16.1879C12.429 16.1869 12.7953 16.5367 12.8052 16.9855C12.8259 17.4463 12.4705 17.8261 12.0262 17.8471ZM7.10433 13.4553C7.12408 13.915 7.50025 14.2749 7.95442 14.2539C8.39872 14.2339 8.75317 13.8531 8.73243 13.3933C8.72256 12.9435 8.35725 12.5937 7.91196 12.5947C7.45779 12.6147 7.10334 12.9955 7.10433 13.4553ZM7.95837 17.8521C7.5042 17.8731 7.12901 17.5132 7.10828 17.0535C7.10729 16.5937 7.46273 16.2129 7.9169 16.1929C8.3612 16.1919 8.7275 16.5417 8.73737 16.9915C8.7581 17.4513 8.40365 17.8321 7.95837 17.8521Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Продление срока хранения</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'postponement')">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M13.4109 0.76862L13.4119 1.51824C16.1665 1.73414 17.9862 3.6112 17.9891 6.48975L18 14.9155C18.0039 18.054 16.0322 19.985 12.8718 19.99L5.15189 20C2.0112 20.004 0.0148232 18.027 0.0108739 14.8796L1.32771e-05 6.55272C-0.00393603 3.65517 1.75153 1.78311 4.50618 1.53024L4.50519 0.780614C4.5042 0.340834 4.83002 0.00999952 5.26445 0.00999952C5.69887 0.00900002 6.02469 0.338835 6.02568 0.778615L6.02666 1.47826L11.8914 1.47027L11.8904 0.770619C11.8894 0.330839 12.2152 0.00100402 12.6497 4.52073e-06C13.0742 -0.000994979 13.4099 0.32884 13.4109 0.76862ZM16.4696 6.84158L1.52149 6.86157L1.5205 6.55072C1.51754 4.38281 2.58286 3.25138 4.50815 3.05847L4.50914 3.82809C4.50914 4.25887 4.83595 4.5977 5.27037 4.5967C5.70479 4.5967 6.02962 4.25687 6.02962 3.82609L6.02864 3.01749L11.8934 3.0095L11.8944 3.81909C11.8944 4.24888 12.2212 4.58871 12.6556 4.58771C13.0801 4.58771 13.4148 4.24688 13.4148 3.81709L13.4139 3.04748C15.349 3.21539 16.4272 4.34283 16.4696 6.49175V6.84158ZM9.0508 15.2881C8.7573 15.5804 8.75632 16.0553 9.0486 16.3488C9.34089 16.6423 9.81576 16.6432 10.1093 16.351L12.5225 13.9477C12.6464 13.8274 12.7288 13.6646 12.7464 13.4828C12.7488 13.4585 12.75 13.4341 12.75 13.4095C12.75 13.3764 12.7478 13.3434 12.7435 13.3109C12.7306 13.2134 12.6991 13.1218 12.6526 13.0399C12.6193 12.9811 12.5779 12.9266 12.5292 12.8781L10.1092 10.4685C9.81569 10.1763 9.34082 10.1773 9.04856 10.4708C8.7563 10.7643 8.75732 11.2392 9.05085 11.5315L10.184 12.6597H6.00001C5.5858 12.6597 5.25001 12.9955 5.25001 13.4097C5.25001 13.8239 5.5858 14.1597 6.00001 14.1597H10.1839L9.0508 15.2881Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Перенос даты доставки</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'сlarification')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 10C0 4.481 4.48 0 10 0C15.53 0 20 4.481 20 10C20 15.521 15.53 20 10 20C4.48 20 0 15.521 0 10ZM10.2725 11.4043C10.1699 11.8623 9.90332 12.1289 9.41797 12.1289C8.83691 12.1289 8.49512 11.7324 8.49512 11.1719V11.0762C8.49512 10.2695 8.91211 9.73633 9.71875 9.26465C10.6006 8.73828 10.8672 8.39648 10.8672 7.76758C10.8672 7.09766 10.3477 6.63281 9.5957 6.63281C8.92578 6.63281 8.47461 6.96094 8.25586 7.56934C8.08496 8.00684 7.77734 8.19824 7.36035 8.19824C6.82031 8.19824 6.48535 7.86328 6.48535 7.34375C6.48535 7.0498 6.55371 6.79004 6.69043 6.53027C7.12793 5.62793 8.22168 5.04688 9.69141 5.04688C11.6328 5.04688 12.9385 6.11328 12.9385 7.70605C12.9385 8.73828 12.4395 9.44238 11.4756 10.0098C10.5664 10.5361 10.3613 10.8301 10.2725 11.4043ZM10.5527 14.0977C10.5527 14.6992 10.0537 15.1709 9.43164 15.1709C8.81641 15.1709 8.31738 14.6992 8.31738 14.0977C8.31738 13.4961 8.81641 13.0244 9.43164 13.0244C10.0537 13.0244 10.5527 13.4961 10.5527 14.0977Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Уточнение</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'forwarding')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.54618 3.27793C7.71236 3.39789 7.98037 3.67345 7.98037 3.67345C9.02079 4.64858 10.5879 7.07394 11.0911 8.30444C11.1016 8.30444 11.4001 9.03608 11.4118 9.38409V9.43041C11.4118 9.96371 11.1133 10.4626 10.6335 10.7179C10.4357 10.8232 9.95456 10.9211 9.72244 10.9683C9.64556 10.984 9.59599 10.9941 9.59308 10.997C8.90727 11.1016 7.85514 11.1704 6.70003 11.1704C5.48757 11.1704 4.38981 11.1016 3.71453 10.9733C3.70282 10.9733 3.08606 10.8462 2.88009 10.7642C2.58282 10.6372 2.3312 10.4044 2.17087 10.1145C2.05618 9.88294 2 9.63827 2 9.38409C2.01053 9.11685 2.18257 8.618 2.26215 8.42083C2.76539 7.12026 4.41204 4.6367 5.41852 3.68532C5.52307 3.57922 5.64206 3.46806 5.72485 3.39071C5.76902 3.34945 5.8029 3.3178 5.81877 3.30169C6.07039 3.10452 6.37936 3 6.71173 3C7.00783 3 7.30509 3.09264 7.54618 3.27793ZM18.2286 10.1618C18.2286 10.6856 17.8108 11.1096 17.2947 11.1096C16.7786 11.1096 16.3608 10.6856 16.3608 10.1618L16.1033 5.58295C16.1033 4.91543 16.637 4.375 17.2947 4.375C17.9524 4.375 18.4849 4.91543 18.4849 5.58295L18.2286 10.1618ZM21.1199 13.2356C21.4172 13.3639 21.6688 13.5955 21.8291 13.8853C21.9438 14.1169 22 14.3616 22 14.617C21.9895 14.883 21.8174 15.3831 21.7367 15.5802C21.2346 16.8797 19.5868 19.3633 18.5815 20.3158C18.4787 20.4194 18.3619 20.5284 18.2793 20.6055L18.2792 20.6055C18.2331 20.6486 18.1976 20.6817 18.1812 20.6983C17.9284 20.8955 17.6206 21 17.2894 21C16.991 21 16.6937 20.9074 16.4538 20.7209C16.2876 20.6021 16.0196 20.3265 16.0196 20.3265C14.978 19.3526 13.4121 16.926 12.9089 15.6954C12.8972 15.6954 12.5999 14.965 12.5882 14.617V14.5706C12.5882 14.0361 12.8855 13.5373 13.3665 13.2819C13.5639 13.1777 14.0435 13.0796 14.2762 13.0319L14.2762 13.0319C14.3539 13.016 14.404 13.0058 14.4069 13.0028C15.0927 12.8983 16.1449 12.8294 17.3 12.8294C18.5124 12.8294 19.6102 12.8983 20.2855 13.0265C20.296 13.0265 20.9139 13.1536 21.1199 13.2356ZM6.70553 12.8905C6.18942 12.8905 5.77161 13.3146 5.77161 13.8383L5.51414 18.4171C5.51414 19.0846 6.04781 19.625 6.70553 19.625C7.36325 19.625 7.89575 19.0846 7.89575 18.4171L7.63945 13.8383C7.63945 13.3146 7.22165 12.8905 6.70553 12.8905Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Переадресация</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'reDelivery')">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.29527 0.0399711C7.10195 0.150223 7.06153 0.452715 7.16622 1.00532C7.27819 1.59639 7.28146 1.67075 7.19869 1.74139C7.15742 1.77661 6.91472 1.87255 6.65934 1.95458C5.08267 2.46109 3.87493 3.19356 2.73918 4.33214C1.19946 5.87567 0.265915 7.79004 0.0336691 9.88017C-0.0323465 10.4743 0.00504208 11.9481 0.0909633 12.1384C0.313236 12.6308 0.807284 12.8157 1.28191 12.5841C1.64752 12.4057 1.72335 12.206 1.81339 11.1846C1.96197 9.4994 2.71459 7.96738 4.00151 6.73045C4.50638 6.2452 5.03043 5.88081 5.67011 5.57017C6.28828 5.26997 6.73977 5.11212 7.3784 4.9729C7.85719 4.86853 7.84746 4.86403 7.88989 5.21159C7.96221 5.80309 8.09214 6.21722 8.25579 6.37743C8.33553 6.45551 8.55489 6.4593 8.73473 6.38574C8.82417 6.34917 9.13381 6.03984 9.65483 5.46664C10.7517 4.25987 11.7407 3.12782 11.8059 3.00429C11.9143 2.79924 11.9181 2.63815 11.8192 2.4482C11.7352 2.28684 11.6647 2.23434 11.0604 1.88287C10.3099 1.44641 8.10191 0.210745 7.84197 0.0816764C7.66164 -0.00786151 7.41244 -0.0268364 7.29527 0.0399711ZM16.8296 7.36271C16.3822 7.52645 16.2824 7.72027 16.2061 8.5739C16.1101 9.64725 15.9214 10.3551 15.5035 11.2092C14.558 13.142 12.8584 14.5028 10.7777 14.9928C10.0909 15.1545 10.1752 15.2043 10.0665 14.5729C9.92281 13.7382 9.79853 13.5294 9.46708 13.566C9.36691 13.5771 9.23928 13.6155 9.18344 13.6513C8.94049 13.8071 6.27645 16.8241 6.16432 17.0703C6.07234 17.2723 6.08801 17.4533 6.21229 17.6241C6.31327 17.763 7.69697 18.5737 9.686 19.6593C10.202 19.9409 10.3406 20 10.4853 20C10.6225 20 10.6818 19.9775 10.7586 19.8964C10.9082 19.7383 10.9205 19.5679 10.8241 18.9926C10.7764 18.708 10.7374 18.4361 10.7374 18.3885C10.7374 18.2677 10.8451 18.2098 11.4446 18.0087C13.9831 17.1574 15.8851 15.5217 17.0586 13.1809C17.7148 11.8717 17.9591 10.8644 17.9933 9.32661C18.0156 8.32066 17.9873 8.04399 17.8312 7.74572C17.6504 7.40014 17.1989 7.22751 16.8296 7.36271Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Повторная доставка</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'refund')">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.7689 5.3818H20C20 1.98459 17.9644 0 14.5156 0H5.48444C2.03556 0 0 1.98459 0 5.33847V12.6615C0 16.0154 2.03556 18 5.48444 18H14.5156C17.9644 18 20 16.0154 20 12.6615V12.3495H15.7689C13.8052 12.3495 12.2133 10.7975 12.2133 8.883C12.2133 6.96849 13.8052 5.41647 15.7689 5.41647V5.3818ZM15.7689 6.87241H19.2533C19.6657 6.87241 20 7.19834 20 7.60039V10.131C19.9952 10.5311 19.6637 10.8543 19.2533 10.8589H15.8489C14.8548 10.872 13.9855 10.2084 13.76 9.26432C13.6471 8.67829 13.8056 8.07357 14.1931 7.61222C14.5805 7.15087 15.1573 6.88007 15.7689 6.87241ZM15.92 9.53298H16.2489C16.6711 9.53298 17.0133 9.1993 17.0133 8.78767C17.0133 8.37605 16.6711 8.04237 16.2489 8.04237H15.92C15.7181 8.04005 15.5236 8.11664 15.38 8.25504C15.2364 8.39344 15.1555 8.58213 15.1556 8.77901C15.1555 9.19205 15.4964 9.52823 15.92 9.53298ZM4.73778 5.3818H10.3822C10.8044 5.3818 11.1467 5.04812 11.1467 4.63649C11.1467 4.22487 10.8044 3.89119 10.3822 3.89119H4.73778C4.31903 3.89116 3.9782 4.2196 3.97333 4.62783C3.97331 5.04087 4.31415 5.37705 4.73778 5.3818Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Возврат денег</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'freetask')">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.54951 11.73H11.2624C11.6683 11.73 12.005 11.4 12.005 10.99C12.005 10.57 11.6683 10.24 11.2624 10.24H9.54951V8.51C9.54951 8.1 9.22277 7.77 8.81683 7.77C8.41089 7.77 8.07426 8.1 8.07426 8.51V10.24H6.37129C5.96535 10.24 5.62871 10.57 5.62871 10.99C5.62871 11.4 5.96535 11.73 6.37129 11.73H8.07426V13.46C8.07426 13.87 8.41089 14.2 8.81683 14.2C9.22277 14.2 9.54951 13.87 9.54951 13.46V11.73ZM16.3381 7.02561C16.5708 7.02292 16.8242 7.02 17.0545 7.02C17.302 7.02 17.5 7.22 17.5 7.47V15.51C17.5 17.99 15.5099 20 13.0446 20H5.17327C2.59901 20 0.5 17.89 0.5 15.29V4.51C0.5 2.03 2.5 0 4.96535 0H10.2525C10.5099 0 10.7079 0.21 10.7079 0.46V3.68C10.7079 5.51 12.203 7.01 14.0149 7.02C14.4381 7.02 14.8112 7.02316 15.1377 7.02593C15.3917 7.02809 15.6175 7.03 15.8168 7.03C15.9578 7.03 16.1405 7.02789 16.3381 7.02561ZM16.61 5.5662C15.7961 5.5692 14.8367 5.5662 14.1466 5.5592C13.0516 5.5592 12.1496 4.6482 12.1496 3.5422V0.9062C12.1496 0.4752 12.6674 0.2612 12.9635 0.5722C13.4995 1.1351 14.2361 1.90891 14.9693 2.67913C15.7002 3.44689 16.4277 4.21108 16.9496 4.7592C17.2387 5.0622 17.0268 5.5652 16.61 5.5662Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Свободная задача</div>
+                  </div>
+                  <div class="taskPopup-create-item" onclick="changeCreateType(this, 'speedDelivery')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10 20.0001C4.48 20.0001 0 15.5301 0 10.0001C0 4.48012 4.48 0.00012207 10 0.00012207C15.53 0.00012207 20 4.48012 20 10.0001C20 15.5301 15.53 20.0001 10 20.0001ZM13.19 13.7101C13.31 13.7801 13.44 13.8201 13.58 13.8201C13.83 13.8201 14.08 13.6901 14.22 13.4501C14.43 13.1001 14.32 12.6401 13.96 12.4201L10.4 10.3001V5.68012C10.4 5.26012 10.06 4.93012 9.65 4.93012C9.24 4.93012 8.9 5.26012 8.9 5.68012V10.7301C8.9 10.9901 9.04 11.2301 9.27 11.3701L13.19 13.7101Z"
+                        fill="#8C8C8C" />
+                    </svg>
+                    <div class="taskPopup-create-txt">Ускорение доставки</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- <script src="./js/app.js"></script> -->
+  <!-- include FilePond library -->
+  <!--<script src="./js/filepond/filepond.min.js"></script>-->
+  <!-- include FilePond jQuery adapter -->
+  <!--<script src="./js/filepond/filepond.jquery.js"></script>-->
+  <!-- include FilePond plugins -->
+  <!--<script src="./js/filepond/filepond-plugin-file-validate-type.js"></script>-->
+  <script src="./js/fapp.js"></script>
+  <!-- <script src="./js/select2.full.min.js"></script> -->
+  <!--<script src="./js/custom.js"></script>-->
+
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script src="./js/taskPopup.js"></script>
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/locale/ru.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+</body>
+
+</html>
