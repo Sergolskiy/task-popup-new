@@ -262,7 +262,7 @@
   padding-bottom: 24px;
 }
 
-.accordion-block-wrap{
+.accordion-block-wrap {
   overflow: auto;
   overflow-x: hidden;
   height: 100%;
@@ -286,8 +286,6 @@
   margin-right: -15px;
   padding-right: 15px;
 }
-
-
 
 .according-item {
   padding: 24px 0;
@@ -488,6 +486,7 @@
 
 .taskPopup-right-wrap {
   padding-top: 48px;
+  padding-right: 5px;
   max-height: 100%;
   overflow: auto;
   overflow-x: hidden;
@@ -751,13 +750,14 @@
 
 .taskPopup-comments-title {
   font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 20px;
   color: #000000;
   margin-bottom: 16px;
 }
 
 .taskPopup-comments-send {
+  outline: none !important;
   display: none;
   position: absolute;
   bottom: 24px;
@@ -770,9 +770,14 @@
   line-height: 16px;
   font-weight: 500;
   color: #777777;
+  transition: 0.3s;
 }
 .taskPopup-comments-send.active {
   display: block;
+}
+.taskPopup-comments-send:hover {
+  background-color: #e4e4e4;
+  color: #000;
 }
 
 .taskPopup-comments-list {
@@ -963,6 +968,7 @@
   resize: none;
   color: #000;
   background: #f3f3f4;
+  box-shadow: 0 0 0 3px #f3f3f4;
   box-sizing: border-box;
   border-radius: 12px;
   padding: 16px;
@@ -971,6 +977,12 @@
   line-height: 15px;
   font-weight: 400;
   min-height: 180px;
+}
+
+.taskPopup-create-task-form textarea:focus {
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #dadce0;
 }
 
 .taskPopup-create-task-form textarea::placeholder {
@@ -1053,6 +1065,7 @@
 }
 
 .taskPopup-create-btn {
+  outline: none !important;
   border-radius: 12px;
   padding: 16px 24px;
   margin-top: 24px;
@@ -1062,28 +1075,33 @@
   text-align: center;
   color: #ffffff;
   background: #5081e9;
+  transition: 0.3s;
+}
+.taskPopup-create-btn:hover {
+  color: #fff;
+  background-color: rgb(47 104 204);
 }
 
 .taskPopup-create-radio-type {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  display: block;
+  margin-bottom: 40px;
 }
 
 .taskPopup-create-radio-title {
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
   color: #000000;
-  margin-right: 30px;
+  margin-bottom: 16px;
 }
-
+.taskPopup-create-radio-type-items-wrapper {
+  display: flex;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 12px;
+  border: 1px solid #f3f3f4;
+}
 .taskPopup-create-radio-type-item {
-  margin-right: 20px;
-}
-
-.taskPopup-create-radio-type-item:last-child {
-  margin-right: 0;
 }
 
 .taskPopup-create-radio-type-item input {
@@ -1091,28 +1109,25 @@
 }
 
 .taskPopup-create-radio-type-label {
-  border: 1px solid #d1d8e5;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 15px;
-  box-sizing: border-box;
-  border-radius: 6px;
-  padding: 8px 10px 9px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-bottom: 0;
-  color: #000000;
   display: flex;
   align-items: center;
+  padding: 8px 10px 9px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 8px;
+  color: #8c8c8c;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .taskPopup-create-radio-type-item
   input:checked
   + .taskPopup-create-radio-type-label {
-  background: #5081e9;
-  box-shadow: 0px 0px 12px rgba(80, 129, 233, 0.6);
+  font-weight: bold;
+  background: #f3f3f4;
   text-align: center;
-  color: #ffffff;
+  color: #000;
 }
 
 .taskPopup-create-radio-type-ico {
@@ -1147,6 +1162,7 @@
 }
 
 .taskPopup-create-files-block {
+  border-radius: 12px;
   background: url("../img/drag-drop.png") center center no-repeat;
 }
 
@@ -1165,41 +1181,48 @@
 .taskPopup-create-calendar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .taskPopup-create-calendar-title {
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 500;
   color: #000000;
+  margin-right: 16px;
 }
 
 .taskPopup-create-calendar-item input {
-  border: 1px solid #6b6b6b;
   box-sizing: border-box;
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 13px;
-  line-height: 15px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-right: 16px;
+  font-size: 16px;
+  line-height: 24px;
   color: #000000;
   font-weight: 400;
-  width: 450px;
-  background: white url("../img/calendar.svg") 97% 9px no-repeat;
+  width: 100%;
+  max-width: 170px;
+  background: #f3f3f4 url("../img/Calendar3.svg") 90% 11px no-repeat;
   cursor: pointer;
+}
+.taskPopup-create-calendar-item input::-webkit-input-placeholder {
+  color: #000;
 }
 
 .taskPopup-create-calendar-calc {
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400 !important;
   text-align: right;
   color: #000000;
-  margin-top: 15px;
-  margin-bottom: 25px;
+  /* margin-top: 15px;
+  margin-bottom: 25px; */
   font-weight: 700;
 }
 .taskPopup-create-calendar-calc span {
-  color: #5081e9;
+  color: #000;
+  font-weight: 700;
 }
 
 .taskPopup-create-calendar + textarea {
@@ -1324,7 +1347,7 @@
     height: 35px;
   }
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
   .taskPopup-left {
     max-width: 340px;
   }
@@ -1344,8 +1367,138 @@
   .taskPopup-top-action {
     margin-right: 10px;
   }
+  .taskPopup-top-action svg {
+    width: 16px;
+    height: 16px;
+  }
   .taskPopup-content .taskPopup-right {
     border-left: 5px solid #fafafa;
+    max-width: 400px;
+  }
+  .taskPopup-content .taskPopup-left {
+    max-width: 300px;
+  }
+
+  .accordion-title {
+    font-size: 11px;
+  }
+  .taskPopup-left-name {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .taskPopup-left-recipient-name {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .taskPopup-left-value {
+    font-size: 15px;
+    line-height: 17px;
+  }
+  .taskPopup-top-btn {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .taskPopup-center-table td:first-child span {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .taskPopup-center-table-td-ico {
+    width: 22px;
+    height: 22px;
+  }
+  .taskPopup-center-table-td-ico svg {
+    width: 10px;
+    height: 10px;
+  }
+  .taskPopup-center-table-txt {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .taskPopup-center-table-desc-ico {
+    margin-right: 8px;
+  }
+  .taskPopup-center-table-desc-ico svg {
+    width: 12px;
+    height: 12px;
+  }
+  .taskPopup-center-table-desc-text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .taskPopup-center-table-desc {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .taskPopup-warning,
+  .taskPopup-error {
+    padding: 13px;
+  }
+  .taskPopup-error-text-short span,
+  .taskPopup-warning-text-short span {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .taskPopup-warning-ico,
+  .taskPopup-error-ico {
+    margin-right: 10px;
+  }
+  .taskPopup-warning-ico svg,
+  .taskPopup-error-ico svg {
+    width: 15px;
+    height: 15px;
+  }
+  .taskPopup-failure-text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .taskPopup-rigth-item-name {
+    font-size: 11px;
+    line-height: 12px;
+  }
+  .taskPopup-status-title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .taskPopup-create-item {
+    padding-left: 16px;
+  }
+  .taskPopup-create-txt {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .taskPopup-create-task-title span {
+    font-size: 19px;
+    line-height: 22px;
+  }
+  .taskPopup-create-task-content-title {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .taskPopup-create-calendar-title {
+    font-size: 14px;
+    line-height: 16px;
+    margin-right: 10px;
+  }
+  .taskPopup-create-calendar-item input {
+    font-size: 12px;
+  }
+  .taskPopup-create-calendar-item input {
+    background-size: 14px;
+    background-position-y: 17px;
+    max-width: 125px;
+    margin-right: 5px;
+  }
+  .taskPopup-create-radio-title {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .taskPopup-create-radio-type-label {
+    font-size: 14px;
+  }
+  .taskPopup-create-calendar-calc{
+    font-size: 12px;
+    line-height: 14px;
   }
 }
 
