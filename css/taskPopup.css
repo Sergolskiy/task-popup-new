@@ -67,11 +67,14 @@
 .taskPopup-content .taskPopup-right {
   border-left: 16px solid #fafafa;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .taskPopup-top-actions {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 38px;
 }
 .taskPopup-top-action {
   position: relative;
@@ -485,7 +488,7 @@
 }
 
 .taskPopup-right-wrap {
-  padding-top: 48px;
+  padding-top: 0;
   padding-right: 5px;
   max-height: 100%;
   overflow: auto;
@@ -909,7 +912,9 @@
 }
 
 .taskPopup-create-task.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .taskPopup-create-task-title {
@@ -947,8 +952,21 @@
   opacity: 0.5;
 }
 
-.taskPopup-create-task-content {
+
+
+.taskPopup-create-task-content::-webkit-scrollbar {
+  width: 8px;
 }
+
+.taskPopup-create-task-content::-webkit-scrollbar-track {
+}
+
+.taskPopup-create-task-content::-webkit-scrollbar-thumb {
+  background-color: #dadce0;
+  border-radius: 4px;
+}
+
+
 .taskPopup-create-task-content-title {
   font-size: 18px;
   line-height: 20px;
@@ -1321,10 +1339,25 @@
 }
 
 @media screen and (max-width: 1800px) {
+
+  .taskPopup-create-task-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+    padding-right: 10px;
+  }
+
   .taskPopup-content .taskPopup-left,
   .taskPopup-content .taskPopup-center,
   .taskPopup-content .taskPopup-right {
     padding: 30px;
+  }
+
+  .taskPopup-content .taskPopup-center{
+    padding-right: 20px;
   }
 
   .taskPopup-left {
@@ -1346,8 +1379,18 @@
     min-width: 35px;
     height: 35px;
   }
+  .taskPopup-top-action {
+    min-width: 35px;
+    height: 35px;
+  }
+  .taskPopup-top-action svg {
+    width: 16px;
+    height: 16px;
+  }
 }
+
 @media screen and (max-width: 1500px) {
+
   .taskPopup-left {
     max-width: 340px;
   }
@@ -1486,8 +1529,9 @@
   .taskPopup-create-calendar-item input {
     background-size: 14px;
     background-position-y: 17px;
-    max-width: 125px;
     margin-right: 5px;
+    padding: 12px 10px;
+    max-width: 112px;
   }
   .taskPopup-create-radio-title {
     font-size: 16px;
