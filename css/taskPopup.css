@@ -1389,7 +1389,7 @@
   }
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1550px) {
 
   .taskPopup-left {
     max-width: 340px;
@@ -1546,7 +1546,7 @@
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1550px) {
   .taskPopup-warning-btn.detail-show,
   .taskPopup-warning-btn.detail-hide,
   .taskPopup-error-btn.detail-show,
