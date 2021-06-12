@@ -153,7 +153,7 @@
 
 .taskPopup-top-btns {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 32px;
   border-bottom: 1px solid #dedede;
 }
@@ -1101,7 +1101,15 @@
 }
 
 .taskPopup-create-radio-type {
-  display: block;
+  display: flex;
+  margin-bottom: 40px;
+  border: 1px solid #F3F3F4;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.taskPopup-create-radio-type-block{
   margin-bottom: 40px;
 }
 
@@ -1129,7 +1137,7 @@
 .taskPopup-create-radio-type-label {
   display: flex;
   align-items: center;
-  padding: 8px 10px 9px;
+  padding: 10px 20px 10px;
   margin-bottom: 0;
   font-size: 16px;
   line-height: 24px;
@@ -1137,6 +1145,7 @@
   color: #8c8c8c;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 .taskPopup-create-radio-type-item
@@ -1159,12 +1168,12 @@
 }
 
 .taskPopup-create-radio-type-item
-  input:checked
+  input:not(:checked)
   + .taskPopup-create-radio-type-label
   .taskPopup-create-radio-type-ico
   svg
   path {
-  fill: white;
+  fill: #8C8C8C;
 }
 
 .taskPopup-create-files {
@@ -1273,6 +1282,7 @@
 }
 
 .taskPopup-select-block-top {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1286,6 +1296,13 @@
   font-weight: 400;
 }
 
+.taskPopup-select-block-right{
+  position: absolute;
+  right: 50px;
+  top: 42px;
+  z-index: 2;
+}
+
 .copy {
   display: block;
   background: url("../img/copy.svg") center center no-repeat;
@@ -1294,13 +1311,32 @@
   margin-right: 10px;
 }
 
+.taskPopup-select-block-input{
+  position: relative;
+}
+
+.taskPopup-select-block-input:after{
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  background: linear-gradient(270deg, #F3F3F4 0%, rgba(243, 243, 244, 0) 100%);
+}
+
 .taskPopup-select-block-input input {
-  background: #ffffff;
-  border: 1px solid #6b6b6b;
+  background: #F3F3F4;
+  border-radius: 8px;
+  padding: 12px 16px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
   box-sizing: border-box;
-  border-radius: 6px;
   width: 100%;
-  height: 35px;
 }
 
 .taskPopup-row {
@@ -1338,27 +1374,29 @@
   line-height: 22px;
 }
 
+.taskPopup-create-task-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-bottom: 30px;
+  padding-right: 10px;
+}
+
+.taskPopup-content .taskPopup-left,
+.taskPopup-content .taskPopup-center,
+.taskPopup-content .taskPopup-right {
+  padding: 30px;
+}
+
+.taskPopup-content .taskPopup-center{
+  padding-right: 9px;
+}
+
 @media screen and (max-width: 1800px) {
 
-  .taskPopup-create-task-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: auto;
-    overflow-x: hidden;
-    padding-bottom: 30px;
-    padding-right: 10px;
-  }
-
-  .taskPopup-content .taskPopup-left,
-  .taskPopup-content .taskPopup-center,
-  .taskPopup-content .taskPopup-right {
-    padding: 30px;
-  }
-
-  .taskPopup-content .taskPopup-center{
-    padding-right: 20px;
-  }
+  
 
   .taskPopup-left {
     max-width: 360px;
@@ -1527,8 +1565,8 @@
     font-size: 12px;
   }
   .taskPopup-create-calendar-item input {
-    background-size: 14px;
-    background-position-y: 17px;
+    background-size: 13px;
+    background-position-y: 15px;
     margin-right: 5px;
     padding: 12px 10px;
     max-width: 112px;
@@ -1554,4 +1592,43 @@
     font-size: 10px;
     min-width: 80px;
   }
+}
+
+@media screen and (max-width: 1440px) {
+  .taskPopup-create-radio-type-label{
+    padding: 10px;
+  }
+
+  .taskPopup-create-radio-type-label {
+    font-size: 12px;
+  }
+
+  .taskPopup-create-calendar-item input{
+    padding: 12px 7px;
+  }
+}
+
+.taskPopup-select + .select2{
+  border: 0 !important;
+}
+
+.select2-container--default .select2-selection--single{
+  background: #F3F3F4 !important;
+  border-radius: 8px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  border: 0 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 40px;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: 8px !important;
+  right: 5px !important;
 }
