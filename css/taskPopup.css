@@ -109,7 +109,6 @@
 .taskPopup-top-action.active,
 .taskPopup-top-action:hover {
   background: #5081e9;
-  box-shadow: 0px 4px 8px rgba(80, 129, 233, 0.42);
 }
 
 .taskPopup-top-action svg path {
@@ -989,7 +988,10 @@
   box-shadow: 0 0 0 3px #f3f3f4;
   box-sizing: border-box;
   border-radius: 12px;
+  border: 1px solid transparent;
   padding: 16px;
+  margin-left: 3px;
+  margin-right: 3px;
   width: 100%;
   font-size: 13px;
   line-height: 15px;
@@ -1007,7 +1009,7 @@
   font-size: 13px;
   line-height: 15px;
   font-weight: 400;
-  color: #a9b7cf;
+  color: #777;
 }
 
 .taskPopup-create-task-radio {
@@ -1190,7 +1192,10 @@
 
 .taskPopup-create-files-block {
   border-radius: 12px;
+  overflow: hidden;
   background: url("../img/drag-drop.png") center center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
 }
 
 .taskPopup-create-files-type {
@@ -1218,7 +1223,9 @@
   color: #000000;
   margin-right: 16px;
 }
-
+.taskPopup-create-calendar-item{
+  position: relative;
+}
 .taskPopup-create-calendar-item input {
   box-sizing: border-box;
   border-radius: 8px;
@@ -1230,9 +1237,20 @@
   font-weight: 400;
   width: 100%;
   max-width: 170px;
-  background: #f3f3f4 url("../img/Calendar3.svg") 90% 11px no-repeat;
   cursor: pointer;
+  background: #f3f3f4
 }
+
+.taskPopup-create-calendar-item span.ico-calendar{
+  position: absolute;
+  content: '';
+  right: 30px;
+  width: 20px;
+  height: 100%;
+  background: url("../img/Calendar3.svg") 90% 11px no-repeat;
+}
+
+
 .taskPopup-create-calendar-item input::-webkit-input-placeholder {
   color: #000;
 }
@@ -1364,11 +1382,11 @@
   border-radius: 12px;
 }
 .tippy-box {
+  text-align: center;
   border-radius: 12px;
 }
 .taskPopup-create-task-tooltype-text {
   display: none;
-  text-align: center;
   color: #fff;
   font-size: 14px;
   line-height: 22px;
@@ -1428,6 +1446,17 @@
 }
 
 @media screen and (max-width: 1550px) {
+
+  .taskPopup-create-calendar-item span.ico-calendar {
+    position: absolute;
+    content: '';
+    right: 12px;
+    top: 14px;
+    width: 14px;
+    height: 16px;
+    background: url(../img/Calendar3.svg) no-repeat;
+    background-size: contain;
+  }
 
   .taskPopup-left {
     max-width: 340px;
